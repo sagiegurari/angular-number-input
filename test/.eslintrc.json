@@ -1,0 +1,14 @@
+{
+  "env": {
+    "browser": true,
+    "jasmine": true
+  },
+  "rules": {
+    "valid-jsdoc": 0,
+    "id-length": 0
+  },
+  "globals": {
+    "assert": true,
+    "inject": true
+  }
+}
