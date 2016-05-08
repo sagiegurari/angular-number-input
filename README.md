@@ -9,7 +9,6 @@
 * [Demo](http://plnkr.co/edit/Fip3UQvEi2KAjPHGnxiV?p=preview)
 * [Usage](#usage)
 * [Installation](#installation)
-* [Limitations](#limitations)
 * [API Documentation](docs/api.md)
 * [Contributing](.github/CONTRIBUTING.md)
 * [Release History](#history)
@@ -17,7 +16,8 @@
 
 <a name="overview"></a>
 ## Overview
-The number-input is an angular directive which provides number validation, parsing and formatting capabilities.
+The number-input is an angular directive which provides number validation, parsing and formatting capabilities
+on any HTML element.
 
 ## Demo
 [Live Demo at Plunker](http://plnkr.co/edit/Fip3UQvEi2KAjPHGnxiV?p=preview)
@@ -70,7 +70,7 @@ See [contributing guide](.github/CONTRIBUTING.md)
 
 | Date        | Version | Description |
 | ----------- | ------- | ----------- |
-| 2016-05-08  | v0.0.2  | Initial release |
+| 2016-05-08  | v0.0.3  | Initial release |
 
 <a name="license"></a>
 ## License
