@@ -9,9 +9,10 @@ The number-input is an angular directive which provides number validation, parsi
 
 | Param | Type | Description |
 | --- | --- | --- |
-| min | <code>number</code> | The min number value |
-| max | <code>number</code> | The max number value |
-| step | <code>number</code> | The step between numbers |
+| ng-model | <code>number</code> | The model for the number input |
+| [min] | <code>number</code> | Optional min number value |
+| [max] | <code>number</code> | Optional max number value |
+| [step] | <code>number</code> | Optional step between numbers |
 | [validation] | <code>function</code> | Optional external validation function |
 | [parser] | <code>function</code> | Optional external parser function |
 | [formatter] | <code>function</code> | Optional external formatter function |

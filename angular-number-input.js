@@ -20,9 +20,10 @@
      * @name numberInput
      * @restrict ECA
      *
-     * @param {number} min - The min number value
-     * @param {number} max - The max number value
-     * @param {number} step - The step between numbers
+     * @param {number} ng-model - The model for the number input
+     * @param {number} [min] - Optional min number value
+     * @param {number} [max] - Optional max number value
+     * @param {number} [step] - Optional step between numbers
      * @param {function} [validation] - Optional external validation function
      * @param {function} [parser] - Optional external parser function
      * @param {function} [formatter] - Optional external formatter function
