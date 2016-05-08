@@ -43,10 +43,30 @@
      * ```
      */
     numberInputModule.directive('numberInput',
+        /**
+         * Returns the directive factory.
+         *
+         * @function
+         * @memberof! numberInput
+         * @private
+         * @returns {object} The directive definition
+         */
         function defineDirective() {
             return {
                 restrict: 'ECA',
                 require: 'ngModel',
+                /**
+                 * Invoked when the directive is created.<br>
+                 * This function will setup the watch logic and ensure the number model value is processed via number validations.
+                 *
+                 * @function
+                 * @memberof! numberInput
+                 * @private
+                 * @param {object} scope - The angular scope for the element
+                 * @param {object} element - The jquery element on which the directive is defined on
+                 * @param {object} attrs - Provides access to the element attributes
+                 * @param {object} ngModelCtrl - The angular model controller
+                 */
                 link: function (scope, element, attrs, ngModelCtrl) {
                     var min;
                     var max;
@@ -55,6 +75,15 @@
                     var parser;
                     var formatter;
 
+                    /**
+                     * Formats the provided value to a number string value.
+                     *
+                     * @function
+                     * @memberof! numberInput
+                     * @private
+                     * @param {object} value - The value to format
+                     * @returns {string} The formatted value
+                     */
                     var formatNumber = function (value) {
                         var number = value;
 
@@ -67,6 +96,13 @@
                         return number;
                     };
 
+                    /**
+                     * Will update the UI with a new view value based on the current model value.
+                     *
+                     * @function
+                     * @memberof! numberInput
+                     * @private
+                     */
                     var updateViewValue = function () {
                         var viewValue = formatNumber(ngModelCtrl.$modelValue);
 
@@ -97,22 +133,68 @@
 
                     scope.$watch(attrs.ngModel, updateViewValue);
 
+                    /**
+                     * Will validate the provided value is a number.
+                     *
+                     * @function
+                     * @memberof! numberInput
+                     * @private
+                     * @param {number} modelValue - The model value to validate
+                     * @returns {boolean} true if valid
+                     */
                     ngModelCtrl.$validators.number = function (modelValue) {
                         return !isNaN(modelValue);
                     };
 
+                    /**
+                     * Will validate the provided value is not less than the min defined.
+                     *
+                     * @function
+                     * @memberof! numberInput
+                     * @private
+                     * @param {number} modelValue - The model value to validate
+                     * @returns {boolean} true if valid
+                     */
                     ngModelCtrl.$validators.min = function (modelValue) {
                         return ((min === undefined) || (modelValue >= min));
                     };
 
+                    /**
+                     * Will validate the provided value is not bigger than the max defined.
+                     *
+                     * @function
+                     * @memberof! numberInput
+                     * @private
+                     * @param {number} modelValue - The model value to validate
+                     * @returns {boolean} true if valid
+                     */
                     ngModelCtrl.$validators.max = function (modelValue) {
                         return ((max === undefined) || (modelValue <= max));
                     };
 
+                    /**
+                     * Will validate the provided value is not between of the defined steps.
+                     *
+                     * @function
+                     * @memberof! numberInput
+                     * @private
+                     * @param {number} modelValue - The model value to validate
+                     * @returns {boolean} true if valid
+                     */
                     ngModelCtrl.$validators.step = function (modelValue) {
                         return ((step === undefined) || ((((modelValue * 1000) / (step * 1000)) % 1) === 0));
                     };
 
+                    /**
+                     * Will invoke an external validation function if defined.
+                     *
+                     * @function
+                     * @memberof! numberInput
+                     * @private
+                     * @param {number} modelValue - The model value to validate
+                     * @param {string} viewValue - The view value to validate
+                     * @returns {boolean} true if valid
+                     */
                     ngModelCtrl.$validators.external = function (modelValue, viewValue) {
                         var valid = true;
 
