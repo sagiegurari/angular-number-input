@@ -1,0 +1,32 @@
+{
+  "name": "angular-number-input",
+  "version": "0.0.1",
+  "description": "AngularJS number input directive.",
+  "authors": [
+    "Sagie Gur-Ari <sagiegurari@gmail.com>"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "http://github.com/sagiegurari/angular-number-input",
+  "keywords": [
+    "AngularJS",
+    "input",
+    "number",
+    "validation"
+  ],
+  "main": "angular-number-input.js",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "example",
+    "target"
+  ],
+  "dependencies": {
+    "angular": "~1"
+  },
+  "devDependencies": {
+    "jquery": "latest",
+    "angular-mocks": "~1"
+  }
+}

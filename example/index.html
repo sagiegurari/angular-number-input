@@ -1,0 +1,19 @@
+<html data-ng-app="exampleApp">
+<head>
+  <title>Angular Number Input Example</title>
+  <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="../angular-number-input.js"></script>
+  <script type="text/javascript" src="example.js"></script>
+</head>
+<body ng-controller="exampleCntrl">
+Number:<br><br>
+<input type="text" class="number-input" ng-model="value1" min="-100" max="100" step="0.5">
+<br><br>
+<span ng-bind="message1"></span>
+<hr>
+Dollars:<br><br>
+<input type="text" class="number-input" ng-model="value2" min="-100" max="100" step="0.5" parser="dollarParser" formatter="dollarFormatter">
+<br><br>
+<span ng-bind="message2"></span>
+</body>
+</html>
