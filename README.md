@@ -6,7 +6,7 @@
 > AngularJS number input directive
 
 * [Overview](#overview)
-* [Demo](http://plnkr.co/edit/SUTiBu?p=preview)
+* [Demo](http://plnkr.co/edit/Fip3UQvEi2KAjPHGnxiV?p=preview)
 * [Usage](#usage)
 * [Installation](#installation)
 * [Limitations](#limitations)
