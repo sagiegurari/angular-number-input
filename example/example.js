@@ -39,9 +39,44 @@ window.angular.module('exampleApp', ['number-input']).controller('exampleCntrl',
             $scope.message2 = 'Value: ' + newValue + ' Was: ' + oldValue;
         });
 
-        $scope.value2 = 100;
+        $scope.value3 = 100;
 
-        $scope.amountSrv = 'exampleAmountService';
+        $scope.dollarSrv = 'exampleDollarService';
     }
-]).service('exampleAmountService', function () {
+]).service('exampleDollarService', function () {
+    return {
+        create: function () {
+            var service = {};
+            var config;
+            service.setConfig = function (config) {
+                config = config;
+            };
+
+            service.getFormatter = function () {
+                return function (value) {
+                    if (value) {
+                        value = '$' + value;
+                    }
+
+                    return value;
+                };
+            };
+
+            service.getParser = function () {
+                return function (value) {
+                    if (value) {
+                        if (value.charAt(0) === '$') {
+                            value = value.substring(1);
+                        }
+                    }
+
+                    value = Number(value);
+
+                    return value;
+                };
+            };
+
+            return service;
+        }
+    }
 });

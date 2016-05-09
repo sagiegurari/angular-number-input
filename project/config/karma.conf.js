@@ -14,6 +14,7 @@ module.exports = function (config) {
             'bower_components/angular/angular.js',
             'bower_components/angular-mocks/angular-mocks.js',
             'angular-number-input.js',
+            'test/helpers/**/*.js',
             'test/spec/**/*.js'
         ],
         port: 8080,

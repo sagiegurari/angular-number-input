@@ -52,6 +52,75 @@ Now you can use the directive in your HTML templates, for example:
   parser="myNumberParser">
 ```
 
+In case you have common parsing/formatting/validations you wish to use in many places in your application, you can create a service to implement those and provide it to the directive as follows:
+
+```html
+<input type="text" class="number-input"
+  ng-model="value"
+  min="-100"
+  max="100"
+  step="0.5"
+  service="myMoneyServiceName">
+```
+
+In your parent directive/controller
+
+```js
+$scope.myMoneyServiceName = 'myMoneyService'; //add a link to the service name
+```
+
+And an example service:
+
+```js
+angular.module('moneyModule', []).service('myMoneyService', function () {
+    return {
+        create: function () {
+            var service = {};
+            var config;
+            service.setConfig = function (config) {
+                config = config; //holds the min/max/step/... values
+            };
+
+            service.getFormatter = function () {
+                return function (value) {
+                    if (value) {
+                        value = '$' + value;
+                    }
+
+                    return value;
+                };
+            };
+
+            service.getParser = function () {
+                return function (value) {
+                    if (value) {
+                        if (value.charAt(0) === '$') {
+                            value = value.substring(1);
+                        }
+                    }
+
+                    value = Number(value);
+
+                    return value;
+                };
+            };
+
+            service.getValidator = function () {
+                return function (modelValue, viewValue) {
+                    return true;
+                };
+            };
+
+            service.link = function (scope, element, attrs, ngModelCtrl) {
+                //do some custom stuff on the directive instance like adding DOM event handling
+            };
+
+            return service;
+        }
+    }
+});
+```
+
 <a name="installation"></a>
 ## Installation
 Run bower install in your project as follows:
@@ -70,6 +139,7 @@ See [contributing guide](.github/CONTRIBUTING.md)
 
 | Date        | Version | Description |
 | ----------- | ------- | ----------- |
+| 2016-05-09  | v0.0.4  | Adding common service support |
 | 2016-05-08  | v0.0.3  | Initial release |
 
 <a name="license"></a>
