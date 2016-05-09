@@ -1,10 +1,74 @@
 /*jslint unparam: true*/
 
 /**
+ * Service definition used by the number input to extend the number input capabilities.
+ *
+ * @author Sagie Gur-Ari
+ * @interface NumberInputService
+ * @public
+ */
+
+/**
+ * Returns an instance of the service used by a specific directive instance.
+ *
+ * @function
+ * @memberof! NumberInputService
+ * @name NumberInputService#create
+ * @public
+ */
+
+/**
+ * Sets the current configuration of the service.
+ *
+ * @function
+ * @memberof! NumberInputService
+ * @name NumberInputService#setConfig
+ * @public
+ * @param {object} config - The current configuration
+ * @param {number} [config.min] - Optional min number value
+ * @param {number} [config.max] - Optional max number value
+ * @param {number} [config.step] - Optional step between numbers
+ */
+
+/**
+ * Returns optional validation function.<br>
+ * This function is optional and it is not required to implement it.
+ *
+ * @function
+ * @memberof! NumberInputService
+ * @name NumberInputService#getValidation
+ * @public
+ * @returns {function} Optional external validation function
+ */
+
+/**
+ * Returns optional parser function.<br>
+ * This function is optional and it is not required to implement it.
+ *
+ * @function
+ * @memberof! NumberInputService
+ * @name NumberInputService#getParser
+ * @public
+ * @returns {function} Optional external parser function
+ */
+
+/**
+ * Returns optional formatter function.<br>
+ * This function is optional and it is not required to implement it.
+ *
+ * @function
+ * @memberof! NumberInputService
+ * @name NumberInputService#getFormatter
+ * @public
+ * @returns {function} Optional external formatter function
+ */
+
+/**
  * @ngdoc method
  * @function
  * @memberof! numberInput
  * @alias numberInput.defineModule
+ * @author Sagie Gur-Ari
  * @private
  *
  * @description
@@ -27,6 +91,7 @@
      * @param {function} [validation] - Optional external validation function
      * @param {function} [parser] - Optional external parser function
      * @param {function} [formatter] - Optional external formatter function
+     * @param {string} [serviceName] - Optional service to inject which will be used to control the directive behaviour (will override validation, parser and formatter attributes)
      *
      * @description
      * The number-input is an angular directive which provides number validation, parsing and formatting capabilities.
@@ -43,7 +108,7 @@
      *   parser="myNumberParser">
      * ```
      */
-    numberInputModule.directive('numberInput',
+    numberInputModule.directive('numberInput', ['$injector',
         /**
          * Returns the directive factory.
          *
@@ -52,7 +117,7 @@
          * @private
          * @returns {object} The directive definition
          */
-        function defineDirective() {
+            function defineDirective($injector) {
             return {
                 restrict: 'ECA',
                 require: 'ngModel',
@@ -75,6 +140,24 @@
                     var validation;
                     var parser;
                     var formatter;
+                    var service;
+
+                    /**
+                     * Sets the config for the service in case of any config change.
+                     *
+                     * @function
+                     * @memberof! numberInput
+                     * @private
+                     */
+                    var setConfig = function () {
+                        if (service) {
+                            service.setConfig({
+                                min: min,
+                                max: max,
+                                step: step
+                            });
+                        }
+                    };
 
                     /**
                      * Formats the provided value to a number string value.
@@ -213,6 +296,8 @@
                             min = value;
                         }
 
+                        setConfig();
+
                         ngModelCtrl.$validate();
                     });
 
@@ -222,6 +307,8 @@
                         } else {
                             max = value;
                         }
+
+                        setConfig();
 
                         ngModelCtrl.$validate();
                     });
@@ -233,36 +320,75 @@
                             step = value;
                         }
 
+                        setConfig();
+
                         ngModelCtrl.$validate();
                     });
 
                     scope.$watch(attrs.validation, function onAttributeChange(value) {
-                        if (value && window.angular.isFunction(value)) {
-                            validation = value;
-                        } else {
-                            validation = null;
-                        }
+                        if (!service) {
+                            if (value && window.angular.isFunction(value)) {
+                                validation = value;
+                            } else {
+                                validation = null;
+                            }
 
-                        ngModelCtrl.$validate();
+                            ngModelCtrl.$validate();
+                        }
                     });
 
                     scope.$watch(attrs.parser, function onAttributeChange(value) {
-                        if (value && window.angular.isFunction(value)) {
-                            parser = value;
-                        } else {
-                            parser = null;
-                        }
+                        if (!service) {
+                            if (value && window.angular.isFunction(value)) {
+                                parser = value;
+                            } else {
+                                parser = null;
+                            }
 
-                        ngModelCtrl.$validate();
+                            ngModelCtrl.$validate();
+                        }
                     });
 
                     scope.$watch(attrs.formatter, function onAttributeChange(value) {
+                        if (!service) {
+                            var updateUI = true;
+
+                            if (value && window.angular.isFunction(value)) {
+                                formatter = value;
+                            } else if (formatter) {
+                                formatter = null;
+                            } else {
+                                updateUI = false;
+                            }
+
+                            if (updateUI) {
+                                ngModelCtrl.$validate();
+                                updateViewValue();
+                            }
+                        }
+                    });
+
+                    scope.$watch(attrs.service, function onAttributeChange(value) {
                         var updateUI = true;
 
                         if (value && window.angular.isFunction(value)) {
-                            formatter = value;
-                        } else if (formatter) {
-                            formatter = null;
+                            var factory = $injector(value);
+
+                            service = factory.create();
+
+                            setConfig();
+
+                            if (service.getValidation) {
+                                validation = service.getValidation() || validation;
+                            }
+                            if (service.getParser) {
+                                parser = service.getParser() || parser;
+                            }
+                            if (service.getFormatter) {
+                                formatter = service.getFormatter() || formatter;
+                            }
+                        } else if (service) {
+                            service = null;
                         } else {
                             updateUI = false;
                         }
@@ -274,5 +400,5 @@
                     });
                 }
             };
-        });
+        }]);
 }());
