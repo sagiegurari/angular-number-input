@@ -3,16 +3,16 @@
 describe('number-input', function () {
     'use strict';
 
-    var element;
     var $rootScope;
 
+    beforeEach(window.angular.mock.module('testServices'));
     beforeEach(window.angular.mock.module('number-input'));
 
     describe('validations', function () {
         it('none', inject(function ($compile, $rootScope) {
             var scope = $rootScope.$new();
 
-            element = angular.element('<input type="text" class="number-input" ng-model="value">');
+            var element = angular.element('<input type="text" class="number-input" ng-model="value">');
             element = $compile(element)(scope);
 
             scope.value = 10;
@@ -27,7 +27,7 @@ describe('number-input', function () {
                 inject(function ($compile, $rootScope) {
                     var scope = $rootScope.$new();
 
-                    element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" min="abc"></form>');
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" min="abc"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10;
@@ -48,7 +48,7 @@ describe('number-input', function () {
                 inject(function ($compile, $rootScope) {
                     var scope = $rootScope.$new();
 
-                    element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" min="5"></form>');
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" min="5"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10;
@@ -69,7 +69,7 @@ describe('number-input', function () {
                 inject(function ($compile, $rootScope) {
                     var scope = $rootScope.$new();
 
-                    element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" min="10"></form>');
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" min="10"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10;
@@ -90,7 +90,7 @@ describe('number-input', function () {
                 inject(function ($compile, $rootScope) {
                     var scope = $rootScope.$new();
 
-                    element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" min="100"></form>');
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" min="100"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10;
@@ -113,7 +113,7 @@ describe('number-input', function () {
                 inject(function ($compile, $rootScope) {
                     var scope = $rootScope.$new();
 
-                    element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" max="abc"></form>');
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" max="abc"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10;
@@ -134,7 +134,7 @@ describe('number-input', function () {
                 inject(function ($compile, $rootScope) {
                     var scope = $rootScope.$new();
 
-                    element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" max="5"></form>');
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" max="5"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 2;
@@ -155,7 +155,7 @@ describe('number-input', function () {
                 inject(function ($compile, $rootScope) {
                     var scope = $rootScope.$new();
 
-                    element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" max="10"></form>');
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" max="10"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10;
@@ -176,7 +176,7 @@ describe('number-input', function () {
                 inject(function ($compile, $rootScope) {
                     var scope = $rootScope.$new();
 
-                    element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" max="100"></form>');
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" max="100"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 1000;
@@ -199,7 +199,7 @@ describe('number-input', function () {
                 inject(function ($compile, $rootScope) {
                     var scope = $rootScope.$new();
 
-                    element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" step="abc"></form>');
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" step="abc"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10;
@@ -220,7 +220,7 @@ describe('number-input', function () {
                 inject(function ($compile, $rootScope) {
                     var scope = $rootScope.$new();
 
-                    element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" step="0.5"></form>');
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" step="0.5"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10.5;
@@ -241,7 +241,7 @@ describe('number-input', function () {
                 inject(function ($compile, $rootScope) {
                     var scope = $rootScope.$new();
 
-                    element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" step="0.5"></form>');
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" step="0.5"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10.3;
@@ -264,7 +264,7 @@ describe('number-input', function () {
                 inject(function ($compile, $rootScope) {
                     var scope = $rootScope.$new();
 
-                    element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" validation="abc"></form>');
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" validation="abc"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10;
@@ -285,7 +285,7 @@ describe('number-input', function () {
                 inject(function ($compile, $rootScope) {
                     var scope = $rootScope.$new();
 
-                    element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" validation="myValidator"></form>');
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" validation="myValidator"></form>');
                     element = $compile(element)(scope);
 
                     scope.myValidator = function (modelValue) {
@@ -311,7 +311,7 @@ describe('number-input', function () {
                 inject(function ($compile, $rootScope) {
                     var scope = $rootScope.$new();
 
-                    element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" validation="myValidator"></form>');
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" validation="myValidator"></form>');
                     element = $compile(element)(scope);
 
                     scope.myValidator = function (modelValue) {
@@ -342,7 +342,7 @@ describe('number-input', function () {
             it('undefined', inject(function ($compile, $rootScope) {
                 var scope = $rootScope.$new();
 
-                element = angular.element('<input type="text" class="number-input" ng-model="value">');
+                var element = angular.element('<input type="text" class="number-input" ng-model="value">');
                 element = $compile(element)(scope);
 
                 scope.value = undefined;
@@ -355,7 +355,7 @@ describe('number-input', function () {
             it('null', inject(function ($compile, $rootScope) {
                 var scope = $rootScope.$new();
 
-                element = angular.element('<input type="text" class="number-input" ng-model="value">');
+                var element = angular.element('<input type="text" class="number-input" ng-model="value">');
                 element = $compile(element)(scope);
 
                 scope.value = null;
@@ -368,7 +368,7 @@ describe('number-input', function () {
             it('number', inject(function ($compile, $rootScope) {
                 var scope = $rootScope.$new();
 
-                element = angular.element('<input type="text" class="number-input" ng-model="value">');
+                var element = angular.element('<input type="text" class="number-input" ng-model="value">');
                 element = $compile(element)(scope);
 
                 scope.value = 5.5;
@@ -381,7 +381,7 @@ describe('number-input', function () {
             it('invalid number', inject(function ($compile, $rootScope) {
                 var scope = $rootScope.$new();
 
-                element = angular.element('<input type="text" class="number-input" ng-model="value" max="100">');
+                var element = angular.element('<input type="text" class="number-input" ng-model="value" max="100">');
                 element = $compile(element)(scope);
 
                 scope.value = 105.5;
@@ -394,7 +394,7 @@ describe('number-input', function () {
             it('not a number', inject(function ($compile, $rootScope) {
                 var scope = $rootScope.$new();
 
-                element = angular.element('<input type="text" class="number-input" ng-model="value" max="100">');
+                var element = angular.element('<input type="text" class="number-input" ng-model="value" max="100">');
                 element = $compile(element)(scope);
 
                 scope.value = 'abc';
@@ -408,10 +408,10 @@ describe('number-input', function () {
                 inject(function ($compile, $rootScope) {
                     var scope = $rootScope.$new();
 
-                    element = angular.element('<input type="text" class="number-input" ng-model="value" formatter="testFormatter">');
+                    var element = angular.element('<input type="text" class="number-input" ng-model="value" formatter="testFormatter">');
                     element = $compile(element)(scope);
 
-                    scope.testFormatter = function (value) {
+                    scope.testFormatter = function () {
                         return 'test';
                     };
                     scope.value = 'abc';
@@ -430,7 +430,7 @@ describe('number-input', function () {
                 inject(function ($compile, $rootScope) {
                     var scope = $rootScope.$new();
 
-                    element = angular.element('<input type="text" class="number-input" ng-model="value" formatter="testFormatter">');
+                    var element = angular.element('<input type="text" class="number-input" ng-model="value" formatter="testFormatter">');
                     element = $compile(element)(scope);
 
                     scope.testFormatter = function () {
@@ -463,7 +463,7 @@ describe('number-input', function () {
             it('undefined', inject(function ($compile, $rootScope) {
                 var scope = $rootScope.$new();
 
-                element = angular.element('<input type="text" class="number-input" ng-model="value">');
+                var element = angular.element('<input type="text" class="number-input" ng-model="value">');
                 element = $compile(element)(scope);
 
                 scope.value = undefined;
@@ -476,7 +476,7 @@ describe('number-input', function () {
             it('null', inject(function ($compile, $rootScope) {
                 var scope = $rootScope.$new();
 
-                element = angular.element('<input type="text" class="number-input" ng-model="value">');
+                var element = angular.element('<input type="text" class="number-input" ng-model="value">');
                 element = $compile(element)(scope);
 
                 scope.value = null;
@@ -489,7 +489,7 @@ describe('number-input', function () {
             it('number', inject(function ($compile, $rootScope) {
                 var scope = $rootScope.$new();
 
-                element = angular.element('<input type="text" class="number-input" ng-model="value">');
+                var element = angular.element('<input type="text" class="number-input" ng-model="value">');
                 element = $compile(element)(scope);
 
                 scope.value = 5.5;
@@ -502,7 +502,7 @@ describe('number-input', function () {
             it('decimal', inject(function ($compile, $rootScope) {
                 var scope = $rootScope.$new();
 
-                element = angular.element('<input type="text" class="number-input" ng-model="value">');
+                var element = angular.element('<input type="text" class="number-input" ng-model="value">');
                 element = $compile(element)(scope);
 
                 scope.value = 105.500;
@@ -516,7 +516,7 @@ describe('number-input', function () {
                 inject(function ($compile, $rootScope) {
                     var scope = $rootScope.$new();
 
-                    element = angular.element('<form name="testForm"><input type="text" name="testNumber" class="number-input" ng-model="value"></form>');
+                    var element = angular.element('<form name="testForm"><input type="text" name="testNumber" class="number-input" ng-model="value"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 100;
@@ -537,7 +537,7 @@ describe('number-input', function () {
                 inject(function ($compile, $rootScope) {
                     var scope = $rootScope.$new();
 
-                    element = angular.element('<form name="testForm"><input type="text" name="testNumber" class="number-input" ng-model="value" parser="testParser"></form>');
+                    var element = angular.element('<form name="testForm"><input type="text" name="testNumber" class="number-input" ng-model="value" parser="testParser"></form>');
                     element = $compile(element)(scope);
 
                     scope.testParser = function () {
@@ -557,5 +557,144 @@ describe('number-input', function () {
                 });
             });
         });
+    });
+
+    describe('service', function () {
+        describe('replace', function () {
+            it('replace', inject(function ($compile, $rootScope) {
+                var scope = $rootScope.$new();
+
+                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="testService">');
+                element = $compile(element)(scope);
+
+                scope.testService = 'noAttributes';
+
+                scope.value = 500;
+                scope.$apply();
+
+                assert.equal(element.val(), '500');
+
+                scope.testService = 'allAttributes';
+
+                scope.$apply();
+
+                assert.equal(element.val(), '$500');
+            }));
+
+            it('remove', inject(function ($compile, $rootScope) {
+                var scope = $rootScope.$new();
+
+                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="testService">');
+                element = $compile(element)(scope);
+
+                scope.testService = 'allAttributes';
+
+                scope.value = 500;
+                scope.$apply();
+
+                assert.equal(element.val(), '$500');
+
+                scope.testService = undefined;
+                scope.value = 500;
+                scope.$apply();
+
+                assert.equal(element.val(), '500');
+            }));
+        });
+
+        describe('no capabilities', function () {
+            it('no state', inject(function ($compile, $rootScope) {
+                var scope = $rootScope.$new();
+
+                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="testService">');
+                element = $compile(element)(scope);
+
+                scope.value = undefined;
+                scope.testService = 'noAttributes';
+
+                scope.$apply();
+
+                assert.equal(element.val(), '');
+            }));
+
+            it('clear old state', inject(function ($compile, $rootScope) {
+                var scope = $rootScope.$new();
+
+                var element = angular.element('<input type="text" class="number-input" ng-model="value" validation="myValidator" formatter="testFormatter" parser="testParser" service="testService">');
+                element = $compile(element)(scope);
+
+                scope.value = undefined;
+
+                scope.myValidator = function () {
+                    return true;
+                };
+                scope.testParser = function () {
+                    return 100;
+                };
+                scope.testFormatter = function () {
+                    return '1,000';
+                };
+
+                scope.value = 500; //shouldn't change anything
+                scope.$apply();
+
+                assert.equal(element.val(), '1,000');
+
+                scope.testService = 'noAttributes';
+                scope.$apply();
+
+                scope.value = 500; //now it has impact
+                scope.$apply();
+
+                assert.equal(element.val(), '500');
+            }));
+        });
+
+        describe('all capabilities', function () {
+            it('no state', inject(function ($compile, $rootScope) {
+                var scope = $rootScope.$new();
+
+                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="testService">');
+                element = $compile(element)(scope);
+
+                scope.value = undefined;
+                scope.testService = 'allAttributes';
+
+                scope.$apply();
+
+                scope.value = 500;
+                scope.$apply();
+
+                assert.equal(element.val(), '$500');
+            }));
+        });
+
+        it('ignore external functions', inject(function ($compile, $rootScope) {
+            var scope = $rootScope.$new();
+
+            var element = angular.element('<input type="text" class="number-input" ng-model="value" validation="myValidator" formatter="testFormatter" parser="testParser" service="testService">');
+            element = $compile(element)(scope);
+
+            scope.value = 500;
+
+            scope.testService = 'noAttributes';
+            scope.$apply();
+
+            assert.equal(element.val(), '500');
+
+            scope.myValidator = function () {
+                return true;
+            };
+            scope.testParser = function () {
+                return 100;
+            };
+            scope.testFormatter = function () {
+                return '1,000';
+            };
+
+            scope.$apply();
+
+            assert.equal(element.val(), '500');
+        }));
     });
 });
