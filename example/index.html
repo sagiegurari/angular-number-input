@@ -15,5 +15,10 @@ Dollars:<br><br>
 <input type="text" class="number-input" ng-model="value2" min="-100" max="100" step="0.5" parser="dollarParser" formatter="dollarFormatter">
 <br><br>
 <span ng-bind="message2"></span>
+<hr>
+Service:<br><br>
+<input type="text" class="number-input" ng-model="value3" min="-10000" max="10000" step="0.01" service="amountSrv">
+<br><br>
+<span ng-bind="message3"></span>
 </body>
 </html>

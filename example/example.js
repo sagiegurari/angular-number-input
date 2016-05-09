@@ -34,5 +34,14 @@ window.angular.module('exampleApp', ['number-input']).controller('exampleCntrl',
 
             return value;
         };
+
+        $scope.$watch('value2', function onValueChange(newValue, oldValue) {
+            $scope.message2 = 'Value: ' + newValue + ' Was: ' + oldValue;
+        });
+
+        $scope.value2 = 100;
+
+        $scope.amountSrv = 'exampleAmountService';
     }
-]);
+]).service('exampleAmountService', function () {
+});
