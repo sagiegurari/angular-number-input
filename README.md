@@ -60,13 +60,7 @@ In case you have common parsing/formatting/validations you wish to use in many p
   min="-100"
   max="100"
   step="0.5"
-  service="myMoneyServiceName">
-```
-
-In your parent directive/controller
-
-```js
-$scope.myMoneyServiceName = 'myMoneyService'; //add a link to the service name
+  service="myMoneyService">
 ```
 
 And an example service:
@@ -139,7 +133,8 @@ See [contributing guide](.github/CONTRIBUTING.md)
 
 | Date        | Version | Description |
 | ----------- | ------- | ----------- |
-| 2016-05-09  | v0.0.4  | Adding common service support |
+| 2016-05-09  | v0.0.5  | 'service' is now string value and not binded to scope |
+| 2016-05-09  | v0.0.3  | Adding common service support |
 | 2016-05-08  | v0.0.3  | Initial release |
 
 <a name="license"></a>

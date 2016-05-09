@@ -564,17 +564,15 @@ describe('number-input', function () {
             it('replace', inject(function ($compile, $rootScope) {
                 var scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="testService">');
+                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="noAttributes">');
                 element = $compile(element)(scope);
-
-                scope.testService = 'noAttributes';
 
                 scope.value = 500;
                 scope.$apply();
 
                 assert.equal(element.val(), '500');
 
-                scope.testService = 'allAttributes';
+                element.attr('service', 'allAttributes');
 
                 scope.$apply();
 
@@ -584,17 +582,15 @@ describe('number-input', function () {
             it('remove', inject(function ($compile, $rootScope) {
                 var scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="testService">');
+                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="allAttributes">');
                 element = $compile(element)(scope);
-
-                scope.testService = 'allAttributes';
 
                 scope.value = 500;
                 scope.$apply();
 
                 assert.equal(element.val(), '$500');
 
-                scope.testService = undefined;
+                element.removeAttr('service');
                 scope.value = 500;
                 scope.$apply();
 
@@ -602,15 +598,29 @@ describe('number-input', function () {
             }));
         });
 
+        it('bind with name, no scope', inject(function ($compile, $rootScope) {
+            var scope = $rootScope.$new();
+
+            var element = angular.element('<input type="text" class="number-input" ng-model="value" service="allAttributes">');
+            element = $compile(element)(scope);
+
+            scope.value = undefined;
+            scope.$apply();
+
+            scope.value = 500;
+            scope.$apply();
+
+            assert.equal(element.val(), '$500');
+        }));
+
         describe('no capabilities', function () {
             it('no state', inject(function ($compile, $rootScope) {
                 var scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="testService">');
+                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="noAttributes">');
                 element = $compile(element)(scope);
 
                 scope.value = undefined;
-                scope.testService = 'noAttributes';
 
                 scope.$apply();
 
@@ -620,7 +630,7 @@ describe('number-input', function () {
             it('clear old state', inject(function ($compile, $rootScope) {
                 var scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value" validation="myValidator" formatter="testFormatter" parser="testParser" service="testService">');
+                var element = angular.element('<input type="text" class="number-input" ng-model="value" validation="myValidator" formatter="testFormatter" parser="testParser">');
                 element = $compile(element)(scope);
 
                 scope.value = undefined;
@@ -640,7 +650,7 @@ describe('number-input', function () {
 
                 assert.equal(element.val(), '1,000');
 
-                scope.testService = 'noAttributes';
+                element.attr('service', 'noAttributes');
                 scope.$apply();
 
                 scope.value = 500; //now it has impact
@@ -654,11 +664,10 @@ describe('number-input', function () {
             it('no state', inject(function ($compile, $rootScope) {
                 var scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="testService">');
+                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="allAttributes">');
                 element = $compile(element)(scope);
 
                 scope.value = undefined;
-                scope.testService = 'allAttributes';
 
                 scope.$apply();
 
@@ -672,12 +681,11 @@ describe('number-input', function () {
         it('ignore external functions', inject(function ($compile, $rootScope) {
             var scope = $rootScope.$new();
 
-            var element = angular.element('<input type="text" class="number-input" ng-model="value" validation="myValidator" formatter="testFormatter" parser="testParser" service="testService">');
+            var element = angular.element('<input type="text" class="number-input" ng-model="value" validation="myValidator" formatter="testFormatter" parser="testParser" service="noAttributes">');
             element = $compile(element)(scope);
 
             scope.value = 500;
 
-            scope.testService = 'noAttributes';
             scope.$apply();
 
             assert.equal(element.val(), '500');
