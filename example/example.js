@@ -40,8 +40,6 @@ window.angular.module('exampleApp', ['number-input']).controller('exampleCntrl',
         });
 
         $scope.value3 = 100;
-
-        $scope.dollarSrv = 'exampleDollarService';
     }
 ]).service('exampleDollarService', function () {
     return {

@@ -390,7 +390,9 @@
                     }
                 });
 
-                scope.$watch(attrs.service, function onAttributeChange(value) {
+                scope.$watch(function getServiceNameViaAttribute() {
+                    return element.attr('service');
+                }, function onAttributeChange(value) {
                     var updateUI = true;
 
                     if (value) {
