@@ -219,10 +219,6 @@
                     }
                 };
 
-                scope.$watch(function getViewValue() {
-                    return ngModelCtrl.$viewValue;
-                }, updateViewValue);
-
                 ngModelCtrl.$parsers.push(function parseNumber(value) {
                     var number;
 
