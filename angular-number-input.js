@@ -423,7 +423,7 @@
      * @param {function} [validation] - Optional external validation function
      * @param {function} [parser] - Optional external parser function
      * @param {function} [formatter] - Optional external formatter function
-     * @param {string} [serviceName] - Optional service to inject which will be used to control the directive behaviour (will override validation, parser and formatter attributes)
+     * @param {string} [service] - Optional service to inject which will be used to control the directive behaviour (will override validation, parser and formatter attributes)
      * @returns {object} The directive definition
      *
      * @description

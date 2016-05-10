@@ -134,7 +134,7 @@ The number-input is an angular directive which provides number validation, parsi
 | [validation] | <code>function</code> | Optional external validation function |
 | [parser] | <code>function</code> | Optional external parser function |
 | [formatter] | <code>function</code> | Optional external formatter function |
-| [serviceName] | <code>string</code> | Optional service to inject which will be used to control the directive behaviour (will override validation, parser and formatter attributes) |
+| [service] | <code>string</code> | Optional service to inject which will be used to control the directive behaviour (will override validation, parser and formatter attributes) |
 
 **Example**  
 ```html
