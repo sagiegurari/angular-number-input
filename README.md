@@ -133,7 +133,7 @@ See [contributing guide](.github/CONTRIBUTING.md)
 
 | Date        | Version | Description |
 | ----------- | ------- | ----------- |
-| 2016-05-10  | v0.0.7  | Maintenance |
+| 2016-05-11  | v0.0.8  | Maintenance |
 | 2016-05-09  | v0.0.5  | 'service' is now string value and not binded to scope |
 | 2016-05-09  | v0.0.3  | Adding common service support |
 | 2016-05-08  | v0.0.3  | Initial release |

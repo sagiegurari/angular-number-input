@@ -7,7 +7,7 @@ module.exports.tasks = {
                 config: '.eslintrc.js'
             },
             src: [
-                'angular-number-input.js'
+                require('../config/web-config.json').mainJSFile
             ]
         }
     }

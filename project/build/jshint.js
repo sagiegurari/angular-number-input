@@ -5,7 +5,7 @@ module.exports.tasks = {
         full: {
             files: {
                 src: [
-                    'angular-number-input.js'
+                    require('../config/web-config.json').mainJSFile
                 ]
             }
         },

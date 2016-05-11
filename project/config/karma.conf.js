@@ -1,9 +1,11 @@
-/*global module: false */
+/*global module: false, require: false */
 
 module.exports = function (config) {
     'use strict';
 
-    config.set({
+    var mainJSFile = require('./web-config.json').mainJSFile;
+
+    var karmaConfig = {
         basePath: '../../',
         frameworks: [
             'mocha',
@@ -13,8 +15,8 @@ module.exports = function (config) {
             'bower_components/jquery/dist/jquery.js',
             'bower_components/angular/angular.js',
             'bower_components/angular-mocks/angular-mocks.js',
-            'angular-number-input.js',
             'test/helpers/**/*.js',
+            mainJSFile,
             'test/spec/**/*.js'
         ],
         port: 8080,
@@ -28,11 +30,7 @@ module.exports = function (config) {
             'progress',
             'coverage'
         ],
-        preprocessors: {
-            'angular-number-input.js': [
-                'coverage'
-            ]
-        },
+        preprocessors: {},
         coverageReporter: {
             dir: 'target/coverage/report',
             reporters: [
@@ -50,5 +48,11 @@ module.exports = function (config) {
                 }
             }
         }
-    });
+    };
+
+    karmaConfig.preprocessors[mainJSFile] = [
+        'coverage'
+    ];
+
+    config.set(karmaConfig);
 };
