@@ -119,6 +119,7 @@ See [contributing guide](.github/CONTRIBUTING.md)
 
 | Date        | Version | Description |
 | ----------- | ------- | ----------- |
+| 2016-05-15  | v0.0.12 | Maintenance |
 | 2016-05-15  | v0.0.11 | Redesign of service integration |
 | 2016-05-11  | v0.0.8  | Maintenance |
 | 2016-05-09  | v0.0.5  | 'service' is now string value and not binded to scope |

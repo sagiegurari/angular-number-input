@@ -15,6 +15,7 @@
  * @memberof! NumberInputService
  * @name NumberInputService#create
  * @public
+ * @returns {object} The service instance
  */
 
 /**
@@ -40,9 +41,12 @@
  * This function is optional and it is not required to implement it.
  *
  * @function
- * @memberof! NumberInputService#validate
- * @type {function}
+ * @memberof! NumberInputService
+ * @name NumberInputService#validate
  * @public
+ * @param {object} [modelValue] - The model value
+ * @param {object} [viewValue] - The UI view value
+ * @returns {boolean} true if valid
  */
 
 /**
@@ -52,8 +56,9 @@
  * @function
  * @memberof! NumberInputService
  * @name NumberInputService#parse
- * @type {function}
  * @public
+ * @param {object} [value] - The value to parse
+ * @returns {object} The parsed value
  */
 
 /**
@@ -63,8 +68,9 @@
  * @function
  * @memberof! NumberInputService
  * @name NumberInputService#format
- * @type {function}
  * @public
+ * @param {object} [value] - The value to format
+ * @returns {object} The formatted value
  */
 
 /**

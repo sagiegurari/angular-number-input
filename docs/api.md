@@ -12,14 +12,18 @@
 ## Functions
 
 <dl>
-<dt><a href="#NumberInputService+create">#create()</a></dt>
+<dt><a href="#NumberInputService+create">#create()</a> ⇒ <code>object</code></dt>
 <dd><p>Returns an instance of the service used by a specific directive instance.</p>
 </dd>
-<dt><a href="#NumberInputService+parse">#parse()</a> ⇒ <code>function</code></dt>
+<dt><a href="#NumberInputService+validate">#validate([modelValue], [viewValue])</a> ⇒ <code>boolean</code></dt>
+<dd><p>Optional validation function.<br>
+This function is optional and it is not required to implement it.</p>
+</dd>
+<dt><a href="#NumberInputService+parse">#parse([value])</a> ⇒ <code>object</code></dt>
 <dd><p>Optional parser function.<br>
 This function is optional and it is not required to implement it.</p>
 </dd>
-<dt><a href="#NumberInputService+format">#format()</a> ⇒ <code>function</code></dt>
+<dt><a href="#NumberInputService+format">#format([value])</a> ⇒ <code>object</code></dt>
 <dd><p>Optional formatter function.<br>
 This function is optional and it is not required to implement it.</p>
 </dd>
@@ -48,9 +52,10 @@ Service definition used by the number input to extend the number input capabilit
 
 * [NumberInputService](#NumberInputService)
     * [#config](#NumberInputService+config) : <code>[Config](#Config)</code>
-    * [#create()](#NumberInputService+create)
-    * [#parse()](#NumberInputService+parse) ⇒ <code>function</code>
-    * [#format()](#NumberInputService+format) ⇒ <code>function</code>
+    * [#create()](#NumberInputService+create) ⇒ <code>object</code>
+    * [#validate([modelValue], [viewValue])](#NumberInputService+validate) ⇒ <code>boolean</code>
+    * [#parse([value])](#NumberInputService+parse) ⇒ <code>object</code>
+    * [#format([value])](#NumberInputService+format) ⇒ <code>object</code>
     * [#link(scope, element, attributes, ngModelCtrl)](#NumberInputService+link)
 
 <a name="NumberInputService+config"></a>
@@ -62,27 +67,55 @@ Holds the current configuration of the service and is populated by the directive
 **Access:** public  
 <a name="NumberInputService+create"></a>
 
-### NumberInputService#create()
+### NumberInputService#create() ⇒ <code>object</code>
 Returns an instance of the service used by a specific directive instance.
 
 **Kind**: global method of <code>[NumberInputService](#NumberInputService)</code>  
+**Returns**: <code>object</code> - The service instance  
 **Access:** public  
+<a name="NumberInputService+validate"></a>
+
+### NumberInputService#validate([modelValue], [viewValue]) ⇒ <code>boolean</code>
+Optional validation function.<br>
+This function is optional and it is not required to implement it.
+
+**Kind**: global method of <code>[NumberInputService](#NumberInputService)</code>  
+**Returns**: <code>boolean</code> - true if valid  
+**Access:** public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [modelValue] | <code>object</code> | The model value |
+| [viewValue] | <code>object</code> | The UI view value |
+
 <a name="NumberInputService+parse"></a>
 
-### NumberInputService#parse() ⇒ <code>function</code>
+### NumberInputService#parse([value]) ⇒ <code>object</code>
 Optional parser function.<br>
 This function is optional and it is not required to implement it.
 
 **Kind**: global method of <code>[NumberInputService](#NumberInputService)</code>  
+**Returns**: <code>object</code> - The parsed value  
 **Access:** public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [value] | <code>object</code> | The value to parse |
+
 <a name="NumberInputService+format"></a>
 
-### NumberInputService#format() ⇒ <code>function</code>
+### NumberInputService#format([value]) ⇒ <code>object</code>
 Optional formatter function.<br>
 This function is optional and it is not required to implement it.
 
 **Kind**: global method of <code>[NumberInputService](#NumberInputService)</code>  
+**Returns**: <code>object</code> - The formatted value  
 **Access:** public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [value] | <code>object</code> | The value to format |
+
 <a name="NumberInputService+link"></a>
 
 ### NumberInputService#link(scope, element, attributes, ngModelCtrl)
