@@ -71,14 +71,14 @@ angular.module('moneyModule', []).service('myMoneyService', function () {
         create: function () {
             return {
                 config: null, //will be populated by the directive with the config which holds the min/max/step/... values
-                formatter: function (value) {
+                format: function (value) {
                     if (value) {
                         value = '$' + value;
                     }
 
                     return value;
                 },
-                parser: function (value) {
+                parse: function (value) {
                     if (value) {
                         if (value.charAt(0) === '$') {
                             value = value.substring(1);
@@ -89,7 +89,7 @@ angular.module('moneyModule', []).service('myMoneyService', function () {
 
                     return value;
                 },
-                validator: function (modelValue, viewValue) {
+                validate: function (modelValue, viewValue) {
                     return true;
                 },
                 link: function (scope, element, attrs, ngModelCtrl) {
@@ -119,8 +119,7 @@ See [contributing guide](.github/CONTRIBUTING.md)
 
 | Date        | Version | Description |
 | ----------- | ------- | ----------- |
-| 2016-05-15  | v0.0.10 | Maintenance |
-| 2016-05-15  | v0.0.9  | Redesign of service integration |
+| 2016-05-15  | v0.0.11 | Redesign of service integration |
 | 2016-05-11  | v0.0.8  | Maintenance |
 | 2016-05-09  | v0.0.5  | 'service' is now string value and not binded to scope |
 | 2016-05-09  | v0.0.3  | Adding common service support |

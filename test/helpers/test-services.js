@@ -9,11 +9,11 @@ window.angular.module('testServices', []).service('noAttributes', function () {
         create: function () {
             var service = {};
 
-            service.validator = function () {
+            service.validate = function () {
                 return true;
             };
 
-            service.formatter = function (value) {
+            service.format = function (value) {
                 if (value) {
                     value = '$' + value;
                 }
@@ -21,7 +21,7 @@ window.angular.module('testServices', []).service('noAttributes', function () {
                 return value;
             };
 
-            service.parser = function (value) {
+            service.parse = function (value) {
                 if (value) {
                     if (value.charAt(0) === '$') {
                         value = value.substring(1);

@@ -40,7 +40,7 @@
  * This function is optional and it is not required to implement it.
  *
  * @function
- * @memberof! NumberInputService
+ * @memberof! NumberInputService#validate
  * @type {function}
  * @public
  */
@@ -51,7 +51,7 @@
  *
  * @function
  * @memberof! NumberInputService
- * @name NumberInputService#parser
+ * @name NumberInputService#parse
  * @type {function}
  * @public
  */
@@ -62,7 +62,7 @@
  *
  * @function
  * @memberof! NumberInputService
- * @name NumberInputService#formatter
+ * @name NumberInputService#format
  * @type {function}
  * @public
  */
@@ -171,16 +171,16 @@
                             service.link(scope, element, attrs, ngModelCtrl);
                         }
 
-                        if (service.validator) {
-                            validation = service.validator;
+                        if (service.validate) {
+                            validation = service.validate.bind(service);
                         }
 
-                        if (service.parser) {
-                            parser = service.parser;
+                        if (service.parse) {
+                            parser = service.parse.bind(service);
                         }
 
-                        if (service.formatter) {
-                            formatter = service.formatter;
+                        if (service.format) {
+                            formatter = service.format.bind(service);
                         }
                     }
                 };
@@ -435,6 +435,7 @@
      *
      * @example
      * ```html
+     * <!-- simple usage of the directive with custom validation/formatting/parsing -->
      * <input type="text" class="number-input"
      *   ng-model="value"
      *   min="-100"
@@ -443,6 +444,14 @@
      *   validation="myNumberValidation"
      *   formatter="myNumberFormatter"
      *   parser="myNumberParser">
+     *
+     * <!-- using angular service for common custom validation/formatting/parsing -->
+     * <input type="text" class="number-input"
+     *   ng-model="value"
+     *   min="-100"
+     *   max="100"
+     *   step="0.5"
+     *   service="myService">
      * ```
      */
     numberInputModule.directive('numberInput', ['$injector', defineDirective]);

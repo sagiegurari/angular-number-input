@@ -15,11 +15,11 @@
 <dt><a href="#NumberInputService+create">#create()</a></dt>
 <dd><p>Returns an instance of the service used by a specific directive instance.</p>
 </dd>
-<dt><a href="#NumberInputService+parser">#parser()</a> ⇒ <code>function</code></dt>
+<dt><a href="#NumberInputService+parse">#parse()</a> ⇒ <code>function</code></dt>
 <dd><p>Optional parser function.<br>
 This function is optional and it is not required to implement it.</p>
 </dd>
-<dt><a href="#NumberInputService+formatter">#formatter()</a> ⇒ <code>function</code></dt>
+<dt><a href="#NumberInputService+format">#format()</a> ⇒ <code>function</code></dt>
 <dd><p>Optional formatter function.<br>
 This function is optional and it is not required to implement it.</p>
 </dd>
@@ -49,8 +49,8 @@ Service definition used by the number input to extend the number input capabilit
 * [NumberInputService](#NumberInputService)
     * [#config](#NumberInputService+config) : <code>[Config](#Config)</code>
     * [#create()](#NumberInputService+create)
-    * [#parser()](#NumberInputService+parser) ⇒ <code>function</code>
-    * [#formatter()](#NumberInputService+formatter) ⇒ <code>function</code>
+    * [#parse()](#NumberInputService+parse) ⇒ <code>function</code>
+    * [#format()](#NumberInputService+format) ⇒ <code>function</code>
     * [#link(scope, element, attributes, ngModelCtrl)](#NumberInputService+link)
 
 <a name="NumberInputService+config"></a>
@@ -67,17 +67,17 @@ Returns an instance of the service used by a specific directive instance.
 
 **Kind**: global method of <code>[NumberInputService](#NumberInputService)</code>  
 **Access:** public  
-<a name="NumberInputService+parser"></a>
+<a name="NumberInputService+parse"></a>
 
-### NumberInputService#parser() ⇒ <code>function</code>
+### NumberInputService#parse() ⇒ <code>function</code>
 Optional parser function.<br>
 This function is optional and it is not required to implement it.
 
 **Kind**: global method of <code>[NumberInputService](#NumberInputService)</code>  
 **Access:** public  
-<a name="NumberInputService+formatter"></a>
+<a name="NumberInputService+format"></a>
 
-### NumberInputService#formatter() ⇒ <code>function</code>
+### NumberInputService#format() ⇒ <code>function</code>
 Optional formatter function.<br>
 This function is optional and it is not required to implement it.
 
@@ -122,6 +122,7 @@ The number-input is an angular directive which provides number validation, parsi
 
 **Example**  
 ```html
+<!-- simple usage of the directive with custom validation/formatting/parsing -->
 <input type="text" class="number-input"
   ng-model="value"
   min="-100"
@@ -130,6 +131,14 @@ The number-input is an angular directive which provides number validation, parsi
   validation="myNumberValidation"
   formatter="myNumberFormatter"
   parser="myNumberParser">
+
+<!-- using angular service for common custom validation/formatting/parsing -->
+<input type="text" class="number-input"
+  ng-model="value"
+  min="-100"
+  max="100"
+  step="0.5"
+  service="myService">
 ```
 <a name="Config"></a>
 

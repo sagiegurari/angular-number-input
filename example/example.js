@@ -45,14 +45,14 @@ window.angular.module('exampleApp', ['number-input']).controller('exampleCntrl',
     return {
         create: function () {
             return {
-                formatter: function (value) {
+                format: function (value) {
                     if (value) {
                         value = '$' + value;
                     }
 
                     return value;
                 },
-                parser: function (value) {
+                parse: function (value) {
                     if (value) {
                         if (value.charAt(0) === '$') {
                             value = value.substring(1);
