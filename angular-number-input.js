@@ -18,49 +18,53 @@
  */
 
 /**
- * Sets the current configuration of the service.
+ * The directive configuration.
  *
- * @function
- * @memberof! NumberInputService
- * @name NumberInputService#setConfig
- * @public
- * @param {object} config - The current configuration
+ * @typedef {object} Config
  * @param {number} [config.min] - Optional min number value
  * @param {number} [config.max] - Optional max number value
  * @param {number} [config.step] - Optional step between numbers
  */
 
 /**
- * Returns optional validation function.<br>
- * This function is optional and it is not required to implement it.
+ * Holds the current configuration of the service and is populated by the directive instance.
  *
- * @function
  * @memberof! NumberInputService
- * @name NumberInputService#getValidator
+ * @name NumberInputService#config
+ * @type {Config}
  * @public
- * @returns {function} Optional external validation function
  */
 
 /**
- * Returns optional parser function.<br>
+ * Optional validation function.<br>
  * This function is optional and it is not required to implement it.
  *
  * @function
  * @memberof! NumberInputService
- * @name NumberInputService#getParser
+ * @type {function}
  * @public
- * @returns {function} Optional external parser function
  */
 
 /**
- * Returns optional formatter function.<br>
+ * Optional parser function.<br>
  * This function is optional and it is not required to implement it.
  *
  * @function
  * @memberof! NumberInputService
- * @name NumberInputService#getFormatter
+ * @name NumberInputService#parser
+ * @type {function}
  * @public
- * @returns {function} Optional external formatter function
+ */
+
+/**
+ * Optional formatter function.<br>
+ * This function is optional and it is not required to implement it.
+ *
+ * @function
+ * @memberof! NumberInputService
+ * @name NumberInputService#formatter
+ * @type {function}
+ * @public
  */
 
 /**
@@ -73,7 +77,7 @@
  * @public
  * @param {object} scope - The angular scope for the element
  * @param {object} element - The jquery element on which the directive is defined on
- * @param {object} attrs - Provides access to the element attributes
+ * @param {object} attributes - Provides access to the element attributes
  * @param {object} ngModelCtrl - The angular model controller
  */
 
@@ -134,11 +138,11 @@
                  */
                 var setConfig = function () {
                     if (service) {
-                        service.setConfig({
+                        service.config = {
                             min: min,
                             max: max,
                             step: step
-                        });
+                        };
                     }
                 };
 
@@ -167,16 +171,16 @@
                             service.link(scope, element, attrs, ngModelCtrl);
                         }
 
-                        if (service.getValidator) {
-                            validation = service.getValidator();
+                        if (service.validator) {
+                            validation = service.validator;
                         }
 
-                        if (service.getParser) {
-                            parser = service.getParser();
+                        if (service.parser) {
+                            parser = service.parser;
                         }
 
-                        if (service.getFormatter) {
-                            formatter = service.getFormatter();
+                        if (service.formatter) {
+                            formatter = service.formatter;
                         }
                     }
                 };

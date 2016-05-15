@@ -44,24 +44,15 @@ window.angular.module('exampleApp', ['number-input']).controller('exampleCntrl',
 ]).service('exampleDollarService', function () {
     return {
         create: function () {
-            var service = {};
-            var config;
-            service.setConfig = function (config) {
-                config = config;
-            };
-
-            service.getFormatter = function () {
-                return function (value) {
+            return {
+                formatter: function (value) {
                     if (value) {
                         value = '$' + value;
                     }
 
                     return value;
-                };
-            };
-
-            service.getParser = function () {
-                return function (value) {
+                },
+                parser: function (value) {
                     if (value) {
                         if (value.charAt(0) === '$') {
                             value = value.substring(1);
@@ -71,10 +62,8 @@ window.angular.module('exampleApp', ['number-input']).controller('exampleCntrl',
                     value = Number(value);
 
                     return value;
-                };
+                }
             };
-
-            return service;
         }
     }
 });
