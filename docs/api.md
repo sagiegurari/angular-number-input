@@ -140,7 +140,7 @@ The directive configuration.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [config.min] | <code>number</code> | Optional min number value |
-| [config.max] | <code>number</code> | Optional max number value |
-| [config.step] | <code>number</code> | Optional step between numbers |
+| [min] | <code>number</code> | Optional min number value |
+| [max] | <code>number</code> | Optional max number value |
+| [step] | <code>number</code> | Optional step between numbers |
 

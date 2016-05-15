@@ -21,9 +21,9 @@
  * The directive configuration.
  *
  * @typedef {object} Config
- * @param {number} [config.min] - Optional min number value
- * @param {number} [config.max] - Optional max number value
- * @param {number} [config.step] - Optional step between numbers
+ * @param {number} [min] - Optional min number value
+ * @param {number} [max] - Optional max number value
+ * @param {number} [step] - Optional step between numbers
  */
 
 /**
