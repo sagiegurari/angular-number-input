@@ -3,8 +3,6 @@
 describe('number-input', function () {
     'use strict';
 
-    var $rootScope;
-
     beforeEach(window.angular.mock.module('testServices'));
     beforeEach(window.angular.mock.module('number-input'));
 
