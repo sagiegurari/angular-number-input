@@ -33,6 +33,14 @@ This function is optional and it is not required to implement it.</p>
 </dd>
 </dl>
 
+## Events
+
+<dl>
+<dt><a href="#event_number-input$update-model">"number-input$update-model" ([modelValue])</a></dt>
+<dd><p>Event which will update the model and view value.</p>
+</dd>
+</dl>
+
 ## Typedefs
 
 <dl>
@@ -173,6 +181,17 @@ The number-input is an angular directive which provides number validation, parsi
   step="0.5"
   service="myService">
 ```
+<a name="event_number-input$update-model"></a>
+
+## "number-input$update-model" ([modelValue])
+Event which will update the model and view value.
+
+**Kind**: event emitted  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [modelValue] | <code>object</code> | The new model value (undefined to use the ngModelCtrl.$modelValue instead) |
+
 <a name="Config"></a>
 
 ## Config : <code>object</code>

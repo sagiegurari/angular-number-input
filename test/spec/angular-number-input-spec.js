@@ -703,4 +703,26 @@ describe('number-input', function () {
             assert.equal(element.val(), '500');
         }));
     });
+
+    describe('events', function () {
+        it('number-input$update-model', inject(function ($compile, $rootScope) {
+            var scope = $rootScope.$new();
+
+            var element = angular.element('<input type="text" class="number-input" ng-model="value">');
+            element = $compile(element)(scope);
+
+            scope.value = 10;
+
+            scope.$apply();
+
+            assert.equal(element.val(), '10');
+
+            element.trigger('number-input$update-model', 20);
+
+            scope.$apply();
+
+            assert.equal(scope.value, 20);
+            assert.equal(element.val(), '20');
+        }));
+    });
 });

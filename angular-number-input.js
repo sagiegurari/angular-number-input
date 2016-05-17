@@ -1,6 +1,13 @@
 /*jslint unparam: true*/
 
 /**
+ * Event which will update the model and view value.
+ *
+ * @event number-input$update-model
+ * @param {object} [modelValue] - The new model value (undefined to use the ngModelCtrl.$modelValue instead)
+ */
+
+/**
  * Service definition used by the number input to extend the number input capabilities.
  *
  * @author Sagie Gur-Ari
@@ -218,9 +225,14 @@
                  * @function
                  * @memberof! numberInput
                  * @private
+                 * @param {object} [modelValue] - The new model value (undefined to use the ngModelCtrl.$modelValue instead)
                  */
-                var updateViewValue = function () {
-                    var viewValue = formatNumber(ngModelCtrl.$modelValue);
+                var updateViewValue = function (modelValue) {
+                    if (modelValue === undefined) {
+                        modelValue = ngModelCtrl.$modelValue;
+                    }
+
+                    var viewValue = formatNumber(modelValue);
 
                     if (viewValue !== ngModelCtrl.$viewValue) {
                         ngModelCtrl.$setViewValue(viewValue, 'change');
@@ -228,6 +240,10 @@
                         ngModelCtrl.$render();
                     }
                 };
+
+                element.on('number-input$update-model', function onUpdateModelEvent($event, modelValue) {
+                    updateViewValue(modelValue);
+                });
 
                 ngModelCtrl.$parsers.push(function parseNumber(value) {
                     var number;
@@ -435,6 +451,7 @@
      * @param {function} [formatter] - Optional external formatter function
      * @param {string} [service] - Optional service to inject which will be used to control the directive behaviour (will override validation, parser and formatter attributes)
      * @returns {object} The directive definition
+     * @listens number-input$update-model
      *
      * @description
      * The number-input is an angular directive which provides number validation, parsing and formatting capabilities.
