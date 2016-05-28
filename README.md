@@ -111,7 +111,8 @@ angular.module('moneyModule', []).service('myMoneyService', function () {
 <a name="installation"></a>
 ## Installation
 Run bower install in your project as follows:
-```
+
+```sh
 bower install angular-number-input --save
 ```
 
@@ -126,7 +127,7 @@ See [contributing guide](.github/CONTRIBUTING.md)
 
 | Date        | Version | Description |
 | ----------- | ------- | ----------- |
-| 2016-05-27  | v0.0.15 | Maintenance |
+| 2016-05-28  | v0.0.16 | Maintenance |
 | 2016-05-17  | v0.0.14 | Directive element now listens to new number-input$update-model event |
 | 2016-05-15  | v0.0.13 | Maintenance |
 | 2016-05-15  | v0.0.11 | Redesign of service integration |
