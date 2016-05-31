@@ -1,6 +1,6 @@
 {
   "name": "angular-number-input",
-  "version": "0.0.15",
+  "version": "0.0.17",
   "description": "AngularJS number input directive.",
   "authors": [
     "Sagie Gur-Ari <sagiegurari@gmail.com>"
