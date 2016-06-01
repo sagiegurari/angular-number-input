@@ -127,7 +127,7 @@ See [contributing guide](.github/CONTRIBUTING.md)
 
 | Date        | Version | Description |
 | ----------- | ------- | ----------- |
-| 2016-05-31  | v0.0.17 | Maintenance |
+| 2016-06-01  | v0.0.18 | Maintenance |
 | 2016-05-17  | v0.0.14 | Directive element now listens to new number-input$update-model event |
 | 2016-05-15  | v0.0.13 | Maintenance |
 | 2016-05-15  | v0.0.11 | Redesign of service integration |
