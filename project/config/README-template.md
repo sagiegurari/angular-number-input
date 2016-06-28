@@ -1,7 +1,7 @@
-# angular-number-input
+# {"gitdown": "gitinfo", "name": "name"}
 
-[![Bower Version](https://img.shields.io/bower/v/angular-number-input.svg?style=flat)](https://github.com/sagiegurari/angular-number-input/releases) [![NPM Version](http://img.shields.io/npm/v/angular-number-input.svg?style=flat)](https://www.npmjs.org/package/angular-number-input) [![Build Status](https://travis-ci.org/sagiegurari/angular-number-input.svg)](http://travis-ci.org/sagiegurari/angular-number-input) [![Coverage Status](https://coveralls.io/repos/sagiegurari/angular-number-input/badge.svg)](https://coveralls.io/r/sagiegurari/angular-number-input) [![Code Climate](https://codeclimate.com/github/sagiegurari/angular-number-input/badges/gpa.svg)](https://codeclimate.com/github/sagiegurari/angular-number-input) [![bitHound Code](https://www.bithound.io/github/sagiegurari/angular-number-input/badges/code.svg)](https://www.bithound.io/github/sagiegurari/angular-number-input) [![Inline docs](http://inch-ci.org/github/sagiegurari/angular-number-input.svg?branch=master)](http://inch-ci.org/github/sagiegurari/angular-number-input)<br>
-[![License](https://img.shields.io/bower/l/angular-number-input.svg)](https://github.com/sagiegurari/angular-number-input/blob/master/LICENSE) [![Retire Status](http://retire.insecurity.today/api/image?uri=https://raw.githubusercontent.com/sagiegurari/angular-number-input/master/bower.json)](http://retire.insecurity.today/api/image?uri=https://raw.githubusercontent.com/sagiegurari/angular-number-input/master/bower.json)
+[![Bower Version](https://img.shields.io/bower/v/{"gitdown": "gitinfo", "name": "name"}.svg?style=flat)](https://github.com/{"gitdown": "gitinfo", "name": "username"}/{"gitdown": "gitinfo", "name": "name"}/releases) [![NPM Version](http://img.shields.io/npm/v/{"gitdown": "gitinfo", "name": "name"}.svg?style=flat)](https://www.npmjs.org/package/{"gitdown": "gitinfo", "name": "name"}) [![Build Status](https://travis-ci.org/{"gitdown": "gitinfo", "name": "username"}/{"gitdown": "gitinfo", "name": "name"}.svg)](http://travis-ci.org/{"gitdown": "gitinfo", "name": "username"}/{"gitdown": "gitinfo", "name": "name"}) [![Coverage Status](https://coveralls.io/repos/{"gitdown": "gitinfo", "name": "username"}/{"gitdown": "gitinfo", "name": "name"}/badge.svg)](https://coveralls.io/r/{"gitdown": "gitinfo", "name": "username"}/{"gitdown": "gitinfo", "name": "name"}) [![Code Climate](https://codeclimate.com/github/{"gitdown": "gitinfo", "name": "username"}/{"gitdown": "gitinfo", "name": "name"}/badges/gpa.svg)](https://codeclimate.com/github/{"gitdown": "gitinfo", "name": "username"}/{"gitdown": "gitinfo", "name": "name"}) [![bitHound Code](https://www.bithound.io/github/{"gitdown": "gitinfo", "name": "username"}/{"gitdown": "gitinfo", "name": "name"}/badges/code.svg)](https://www.bithound.io/github/{"gitdown": "gitinfo", "name": "username"}/{"gitdown": "gitinfo", "name": "name"}) [![Inline docs](http://inch-ci.org/github/{"gitdown": "gitinfo", "name": "username"}/{"gitdown": "gitinfo", "name": "name"}.svg?branch=master)](http://inch-ci.org/github/{"gitdown": "gitinfo", "name": "username"}/{"gitdown": "gitinfo", "name": "name"})<br>
+[![License](https://img.shields.io/bower/l/{"gitdown": "gitinfo", "name": "name"}.svg)](https://github.com/{"gitdown": "gitinfo", "name": "username"}/{"gitdown": "gitinfo", "name": "name"}/blob/master/LICENSE) [![Retire Status](http://retire.insecurity.today/api/image?uri=https://raw.githubusercontent.com/{"gitdown": "gitinfo", "name": "username"}/{"gitdown": "gitinfo", "name": "name"}/master/bower.json)](http://retire.insecurity.today/api/image?uri=https://raw.githubusercontent.com/{"gitdown": "gitinfo", "name": "username"}/{"gitdown": "gitinfo", "name": "name"}/master/bower.json)
 
 > AngularJS number input directive
 
@@ -113,37 +113,13 @@ angular.module('moneyModule', []).service('myMoneyService', function () {
 Run bower install in your project as follows:
 
 ```sh
-bower install angular-number-input --save
+bower install {"gitdown": "gitinfo", "name": "name"} --save
 ```
 
 Or if you are using NPM to download client libraries, you can install it as follows:
 
 ```sh
-npm install --save angular-number-input
+npm install --save {"gitdown": "gitinfo", "name": "name"}
 ```
 
-## API Documentation
-See full docs at: [API Docs](docs/api.md)
-
-## Contributing
-See [contributing guide](.github/CONTRIBUTING.md)
-
-<a name="history"></a>
-## Release History
-
-| Date        | Version | Description |
-| ----------- | ------- | ----------- |
-| 2016-06-28  | v0.0.23 | Maintenance |
-| 2016-06-14  | v0.0.22 | Published via NPM (in addition to bower) |
-| 2016-06-14  | v0.0.21 | Maintenance |
-| 2016-05-17  | v0.0.14 | Directive element now listens to new number-input$update-model event |
-| 2016-05-15  | v0.0.13 | Maintenance |
-| 2016-05-15  | v0.0.11 | Redesign of service integration |
-| 2016-05-11  | v0.0.8  | Maintenance |
-| 2016-05-09  | v0.0.5  | 'service' is now string value and not binded to scope |
-| 2016-05-09  | v0.0.3  | Adding common service support |
-| 2016-05-08  | v0.0.3  | Initial release |
-
-<a name="license"></a>
-## License
-Developed by Sagie Gur-Ari and licensed under the Apache 2 open source license.
+{"gitdown": "include", "file": "./README-footer-template.md"}
