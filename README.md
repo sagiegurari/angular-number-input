@@ -133,7 +133,7 @@ See [contributing guide](.github/CONTRIBUTING.md)
 
 | Date        | Version | Description |
 | ----------- | ------- | ----------- |
-| 2016-07-04  | v0.0.25 | Maintenance |
+| 2016-07-06  | v0.0.26 | Maintenance |
 | 2016-06-14  | v0.0.22 | Published via NPM (in addition to bower) |
 | 2016-06-14  | v0.0.21 | Maintenance |
 | 2016-05-17  | v0.0.14 | Directive element now listens to new number-input$update-model event |
