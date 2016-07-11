@@ -1,13 +1,21 @@
-window.angular.module('testServices', []).service('noAttributes', function () {
+window.angular.module('testServices', []).service('noAttributes', function define() {
+    'use strict';
+
     return {
         create: function () {
             return {};
         }
-    }
-}).service('allAttributes', function () {
+    };
+}).service('allAttributes', function define() {
+    'use strict';
+
     return {
         create: function () {
             var service = {};
+
+            service.min = 10;
+            service.max = 10000;
+            service.step = 5;
 
             service.validate = function () {
                 return true;
@@ -44,5 +52,59 @@ window.angular.module('testServices', []).service('noAttributes', function () {
 
             return service;
         }
-    }
+    };
+}).service('minValidation', function define() {
+    'use strict';
+
+    return {
+        create: function () {
+            var service = {};
+
+            service.min = 10;
+
+            service.link = function () {
+                assert.isObject(service.config);
+
+                assert.equal(service.min, service.config.min);
+            };
+
+            return service;
+        }
+    };
+}).service('maxValidation', function define() {
+    'use strict';
+
+    return {
+        create: function () {
+            var service = {};
+
+            service.max = 100;
+
+            service.link = function () {
+                assert.isObject(service.config);
+
+                assert.equal(service.max, service.config.max);
+            };
+
+            return service;
+        }
+    };
+}).service('stepValidation', function define() {
+    'use strict';
+
+    return {
+        create: function () {
+            var service = {};
+
+            service.step = 5;
+
+            service.link = function () {
+                assert.isObject(service.config);
+
+                assert.equal(service.step, service.config.step);
+            };
+
+            return service;
+        }
+    };
 });

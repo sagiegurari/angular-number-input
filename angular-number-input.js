@@ -44,6 +44,33 @@
  */
 
 /**
+ * Optional min value.
+ *
+ * @memberof! NumberInputService
+ * @name NumberInputService#min
+ * @type {number}
+ * @public
+ */
+
+/**
+ * Optional max value.
+ *
+ * @memberof! NumberInputService
+ * @name NumberInputService#max
+ * @type {number}
+ * @public
+ */
+
+/**
+ * Optional step value.
+ *
+ * @memberof! NumberInputService
+ * @name NumberInputService#step
+ * @type {number}
+ * @public
+ */
+
+/**
  * Optional validation function.<br>
  * This function is optional and it is not required to implement it.
  *
@@ -141,6 +168,7 @@
                 var parser;
                 var formatter;
                 var service;
+                var serviceState = {};
 
                 /**
                  * Sets the config for the service in case of any config change.
@@ -150,12 +178,69 @@
                  * @private
                  */
                 var setConfig = function () {
+                    service.config = {
+                        min: min,
+                        max: max,
+                        step: step
+                    };
+                };
+
+                /**
+                 * Initializes the state based on the current service capabilities.
+                 *
+                 * @function
+                 * @memberof! numberInput
+                 * @private
+                 */
+                var initStateFromService = function () {
                     if (service) {
-                        service.config = {
-                            min: min,
-                            max: max,
-                            step: step
-                        };
+                        if ((min === undefined) && (!isNaN(service.min))) {
+                            min = service.min;
+                            serviceState.min = true;
+                        } else {
+                            delete serviceState.min;
+                        }
+
+                        if ((max === undefined) && (!isNaN(service.max))) {
+                            max = service.max;
+                            serviceState.max = true;
+                        } else {
+                            delete serviceState.max;
+                        }
+
+                        if ((step === undefined) && (!isNaN(service.step))) {
+                            step = service.step;
+                            serviceState.step = true;
+                        } else {
+                            delete serviceState.step;
+                        }
+
+                        setConfig();
+
+                        if (service.link) {
+                            service.link(scope, element, attrs, ngModelCtrl);
+                        }
+
+                        if ((!validation) && service.validate) {
+                            validation = service.validate.bind(service);
+                            serviceState.validation = true;
+                        } else {
+                            delete serviceState.validation;
+                        }
+
+                        if ((!parser) && service.parse) {
+                            parser = service.parse.bind(service);
+                            serviceState.parser = true;
+                        } else {
+                            delete serviceState.parser;
+                        }
+
+                        if ((!formatter) && service.format) {
+                            formatter = service.format.bind(service);
+                            serviceState.formatter = true;
+                        } else {
+                            delete serviceState.formatter;
+                        }
                     }
                 };
 
@@ -168,33 +253,38 @@
                  * @param {string} serviceName - The service name to inject
                  */
                 var initService = function (serviceName) {
-                    //clear all functions as service overrides them
-                    validation = null;
-                    parser = null;
-                    formatter = null;
-
                     if (serviceName) {
                         var factory = $injector.get(serviceName);
 
                         service = factory.create();
 
-                        setConfig();
-
-                        if (service.link) {
-                            service.link(scope, element, attrs, ngModelCtrl);
+                        initStateFromService();
+                    } else {
+                        if (serviceState.min) {
+                            min = undefined;
                         }
 
-                        if (service.validate) {
-                            validation = service.validate.bind(service);
+                        if (serviceState.max) {
+                            max = undefined;
                         }
 
-                        if (service.parse) {
-                            parser = service.parse.bind(service);
+                        if (serviceState.step) {
+                            step = undefined;
                         }
 
-                        if (service.format) {
-                            formatter = service.format.bind(service);
+                        if (serviceState.validation) {
+                            validation = null;
                         }
+
+                        if (serviceState.parser) {
+                            parser = null;
+                        }
+
+                        if (serviceState.formatter) {
+                            formatter = null;
+                        }
+
+                        serviceState = {};
                     }
                 };
 
@@ -340,7 +430,7 @@
                         min = value;
                     }
 
-                    setConfig();
+                    initStateFromService();
 
                     ngModelCtrl.$validate();
                 });
@@ -352,7 +442,7 @@
                         max = value;
                     }
 
-                    setConfig();
+                    initStateFromService();
 
                     ngModelCtrl.$validate();
                 });
@@ -364,52 +454,46 @@
                         step = value;
                     }
 
-                    setConfig();
+                    initStateFromService();
 
                     ngModelCtrl.$validate();
                 });
 
                 scope.$watch(attrs.validation, function onAttributeChange(value) {
-                    if (!service) {
-                        if (value && window.angular.isFunction(value)) {
-                            validation = value;
-                        } else {
-                            validation = null;
-                        }
-
-                        ngModelCtrl.$validate();
+                    if (value && window.angular.isFunction(value)) {
+                        validation = value;
+                    } else {
+                        validation = null;
                     }
+
+                    initStateFromService();
+
+                    ngModelCtrl.$validate();
                 });
 
                 scope.$watch(attrs.parser, function onAttributeChange(value) {
-                    if (!service) {
-                        if (value && window.angular.isFunction(value)) {
-                            parser = value;
-                        } else {
-                            parser = null;
-                        }
-
-                        ngModelCtrl.$validate();
+                    if (value && window.angular.isFunction(value)) {
+                        parser = value;
+                    } else {
+                        parser = null;
                     }
+
+                    initStateFromService();
+
+                    ngModelCtrl.$validate();
                 });
 
                 scope.$watch(attrs.formatter, function onAttributeChange(value) {
-                    if (!service) {
-                        var updateUI = true;
-
-                        if (value && window.angular.isFunction(value)) {
-                            formatter = value;
-                        } else if (formatter) {
-                            formatter = null;
-                        } else {
-                            updateUI = false;
-                        }
-
-                        if (updateUI) {
-                            ngModelCtrl.$validate();
-                            updateViewValue();
-                        }
+                    if (value && window.angular.isFunction(value)) {
+                        formatter = value;
+                    } else if (formatter) {
+                        formatter = null;
                     }
+
+                    initStateFromService();
+
+                    ngModelCtrl.$validate();
+                    updateViewValue();
                 });
 
                 scope.$watch(function getServiceNameViaAttribute() {

@@ -52,14 +52,11 @@ Now you can use the directive in your HTML templates, for example:
   parser="myNumberParser">
 ```
 
-In case you have common parsing/formatting/validations you wish to use in many places in your application, you can create a service to implement those and provide it to the directive as follows:
+In case you have common parsing/formatting/validations/min/max/step you wish to use in many places in your application, you can create a service to implement those and provide it to the directive as follows:
 
 ```html
 <input type="text" class="number-input"
   ng-model="value"
-  min="-100"
-  max="100"
-  step="0.5"
   service="myMoneyService">
 ```
 
@@ -107,6 +104,9 @@ angular.module('moneyModule', []).service('myMoneyService', function () {
     }
 });
 ```
+
+In case both service and HTML attributes provide a definition for same attributes (for example min, max, parser and so on...), the HTML attribute value will override the service provided value.<br>
+If the HTML provided value changes to undefined/null/invalid value, the service value will be used instead.
 
 <a name="installation"></a>
 ## Installation

@@ -45,6 +45,9 @@ window.angular.module('exampleApp', ['number-input']).controller('exampleCntrl',
     return {
         create: function () {
             return {
+                min: -10000,
+                max: 10000,
+                step: 0.01,
                 format: function (value) {
                     if (value) {
                         value = '$' + value;

@@ -104,6 +104,48 @@ describe('number-input', function () {
                     }, 0);
                 });
             });
+
+            it('valid from service', function (done) {
+                inject(function ($compile, $rootScope) {
+                    var scope = $rootScope.$new();
+
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" service="minValidation"></form>');
+                    element = $compile(element)(scope);
+
+                    scope.value = 10;
+
+                    scope.$apply();
+
+                    setTimeout(function () {
+                        assert.equal(element.find('.number-input').val(), '10');
+                        assert.equal(scope.value, 10);
+                        assert.isTrue(scope.testForm.$valid);
+
+                        done();
+                    }, 0);
+                });
+            });
+
+            it('invalid from service', function (done) {
+                inject(function ($compile, $rootScope) {
+                    var scope = $rootScope.$new();
+
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" service="minValidation"></form>');
+                    element = $compile(element)(scope);
+
+                    scope.value = 1;
+
+                    scope.$apply();
+
+                    setTimeout(function () {
+                        assert.equal(element.find('.number-input').val(), '');
+                        assert.equal(scope.value, undefined);
+                        assert.isFalse(scope.testForm.$valid);
+
+                        done();
+                    }, 0);
+                });
+            });
         });
 
         describe('max', function () {
@@ -190,6 +232,48 @@ describe('number-input', function () {
                     }, 0);
                 });
             });
+
+            it('valid from service', function (done) {
+                inject(function ($compile, $rootScope) {
+                    var scope = $rootScope.$new();
+
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" service="maxValidation"></form>');
+                    element = $compile(element)(scope);
+
+                    scope.value = 50;
+
+                    scope.$apply();
+
+                    setTimeout(function () {
+                        assert.equal(element.find('.number-input').val(), '50');
+                        assert.equal(scope.value, 50);
+                        assert.isTrue(scope.testForm.$valid);
+
+                        done();
+                    }, 0);
+                });
+            });
+
+            it('invalid from service', function (done) {
+                inject(function ($compile, $rootScope) {
+                    var scope = $rootScope.$new();
+
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" service="maxValidation"></form>');
+                    element = $compile(element)(scope);
+
+                    scope.value = 500;
+
+                    scope.$apply();
+
+                    setTimeout(function () {
+                        assert.equal(element.find('.number-input').val(), '');
+                        assert.equal(scope.value, undefined);
+                        assert.isFalse(scope.testForm.$valid);
+
+                        done();
+                    }, 0);
+                });
+            });
         });
 
         describe('step', function () {
@@ -250,6 +334,48 @@ describe('number-input', function () {
                         assert.equal(element.find('.number-input').val(), '');
                         assert.equal(scope.value, undefined);
                         assert.isTrue(scope.testForm.$invalid);
+
+                        done();
+                    }, 0);
+                });
+            });
+
+            it('valid from service', function (done) {
+                inject(function ($compile, $rootScope) {
+                    var scope = $rootScope.$new();
+
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" service="stepValidation"></form>');
+                    element = $compile(element)(scope);
+
+                    scope.value = 20;
+
+                    scope.$apply();
+
+                    setTimeout(function () {
+                        assert.equal(element.find('.number-input').val(), '20');
+                        assert.equal(scope.value, 20);
+                        assert.isTrue(scope.testForm.$valid);
+
+                        done();
+                    }, 0);
+                });
+            });
+
+            it('invalid from service', function (done) {
+                inject(function ($compile, $rootScope) {
+                    var scope = $rootScope.$new();
+
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" service="stepValidation"></form>');
+                    element = $compile(element)(scope);
+
+                    scope.value = 23;
+
+                    scope.$apply();
+
+                    setTimeout(function () {
+                        assert.equal(element.find('.number-input').val(), '');
+                        assert.equal(scope.value, undefined);
+                        assert.isFalse(scope.testForm.$valid);
 
                         done();
                     }, 0);
@@ -424,11 +550,11 @@ describe('number-input', function () {
                 });
             });
 
-            it('remove custom', function (done) {
+            it('custom override service', function (done) {
                 inject(function ($compile, $rootScope) {
                     var scope = $rootScope.$new();
 
-                    var element = angular.element('<input type="text" class="number-input" ng-model="value" formatter="testFormatter">');
+                    var element = angular.element('<input type="text" class="number-input" ng-model="value" formatter="testFormatter" service="allAttributes">');
                     element = $compile(element)(scope);
 
                     scope.testFormatter = function () {
@@ -446,7 +572,7 @@ describe('number-input', function () {
                         scope.$apply();
 
                         setTimeout(function () {
-                            assert.equal(element.val(), '1000');
+                            assert.equal(element.val(), '$1000');
 
                             done();
                         }, 0);
@@ -594,6 +720,64 @@ describe('number-input', function () {
 
                 assert.equal(element.val(), '500');
             }));
+
+            it('custom overrides service', inject(function ($compile, $rootScope) {
+                var scope = $rootScope.$new();
+
+                var element = angular.element('<input type="text" class="number-input" ng-model="value" validation="myValidator" formatter="testFormatter" parser="testParser" service="allAttributes">');
+                element = $compile(element)(scope);
+
+                scope.value = 500;
+                scope.$apply();
+
+                assert.equal(element.val(), '$500');
+
+                scope.$apply();
+
+                scope.myValidator = function () {
+                    return true;
+                };
+                scope.testParser = function () {
+                    return 100;
+                };
+                scope.testFormatter = function () {
+                    return '1,000';
+                };
+
+                scope.value = 500;
+                scope.$apply();
+
+                assert.equal(element.val(), '1,000');
+            }));
+
+            it('service unable to override custom', inject(function ($compile, $rootScope) {
+                var scope = $rootScope.$new();
+
+                var element = angular.element('<input type="text" class="number-input" ng-model="value" min="0" max="5000" step="1" validation="myValidator" formatter="testFormatter" parser="testParser">');
+                element = $compile(element)(scope);
+
+                scope.myValidator = function () {
+                    return true;
+                };
+                scope.testParser = function () {
+                    return 100;
+                };
+                scope.testFormatter = function () {
+                    return '1,000';
+                };
+
+                scope.value = 500;
+                scope.$apply();
+
+                assert.equal(element.val(), '1,000');
+
+                element.attr('service', 'allAttributes');
+
+                scope.value = 500;
+                scope.$apply();
+
+                assert.equal(element.val(), '1,000');
+            }));
         });
 
         it('bind with name, no scope', inject(function ($compile, $rootScope) {
@@ -625,7 +809,7 @@ describe('number-input', function () {
                 assert.equal(element.val(), '');
             }));
 
-            it('clear old state', inject(function ($compile, $rootScope) {
+            it('clear old state from service and scope', inject(function ($compile, $rootScope) {
                 var scope = $rootScope.$new();
 
                 var element = angular.element('<input type="text" class="number-input" ng-model="value" validation="myValidator" formatter="testFormatter" parser="testParser">');
@@ -643,15 +827,69 @@ describe('number-input', function () {
                     return '1,000';
                 };
 
-                scope.value = 500; //shouldn't change anything
+                scope.value = 500;
                 scope.$apply();
 
                 assert.equal(element.val(), '1,000');
 
-                element.attr('service', 'noAttributes');
+                element.attr('service', 'allAttributes');
                 scope.$apply();
 
-                scope.value = 500; //now it has impact
+                scope.value = 500;
+                scope.$apply();
+
+                assert.equal(element.val(), '1,000');
+
+                scope.myValidator = undefined;
+                scope.testParser = undefined;
+                scope.testFormatter = undefined;
+
+                scope.value = 500;
+                scope.$apply();
+
+                assert.equal(element.val(), '$500');
+
+                element.removeAttr('service');
+
+                scope.value = 500;
+                scope.$apply();
+
+                assert.equal(element.val(), '500');
+            }));
+
+            it('clear old state from service with all attributes', inject(function ($compile, $rootScope) {
+                var scope = $rootScope.$new();
+
+                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="allAttributes">');
+                element = $compile(element)(scope);
+
+                scope.value = 500;
+                scope.$apply();
+
+                assert.equal(element.val(), '$500');
+
+                element.removeAttr('service');
+
+                scope.value = 500;
+                scope.$apply();
+
+                assert.equal(element.val(), '500');
+            }));
+
+            it('clear old state from service with no attributes', inject(function ($compile, $rootScope) {
+                var scope = $rootScope.$new();
+
+                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="noAttributes">');
+                element = $compile(element)(scope);
+
+                scope.value = 500;
+                scope.$apply();
+
+                assert.equal(element.val(), '500');
+
+                element.removeAttr('service');
+
+                scope.value = 500;
                 scope.$apply();
 
                 assert.equal(element.val(), '500');
@@ -676,17 +914,13 @@ describe('number-input', function () {
             }));
         });
 
-        it('ignore external functions', inject(function ($compile, $rootScope) {
+        it('ignore service functions', inject(function ($compile, $rootScope) {
             var scope = $rootScope.$new();
 
-            var element = angular.element('<input type="text" class="number-input" ng-model="value" validation="myValidator" formatter="testFormatter" parser="testParser" service="noAttributes">');
+            var element = angular.element('<input type="text" class="number-input" ng-model="value" validation="myValidator" formatter="testFormatter" parser="testParser" service="allAttributes">');
             element = $compile(element)(scope);
 
-            scope.value = 500;
-
-            scope.$apply();
-
-            assert.equal(element.val(), '500');
+            scope.value = undefined;
 
             scope.myValidator = function () {
                 return true;
@@ -698,9 +932,10 @@ describe('number-input', function () {
                 return '1,000';
             };
 
+            scope.value = 500; //shouldn't change anything
             scope.$apply();
 
-            assert.equal(element.val(), '500');
+            assert.equal(element.val(), '1,000');
         }));
     });
 

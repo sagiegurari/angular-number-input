@@ -52,14 +52,11 @@ Now you can use the directive in your HTML templates, for example:
   parser="myNumberParser">
 ```
 
-In case you have common parsing/formatting/validations you wish to use in many places in your application, you can create a service to implement those and provide it to the directive as follows:
+In case you have common parsing/formatting/validations/min/max/step you wish to use in many places in your application, you can create a service to implement those and provide it to the directive as follows:
 
 ```html
 <input type="text" class="number-input"
   ng-model="value"
-  min="-100"
-  max="100"
-  step="0.5"
   service="myMoneyService">
 ```
 
@@ -108,6 +105,9 @@ angular.module('moneyModule', []).service('myMoneyService', function () {
 });
 ```
 
+In case both service and HTML attributes provide a definition for same attributes (for example min, max, parser and so on...), the HTML attribute value will override the service provided value.<br>
+If the HTML provided value changes to undefined/null/invalid value, the service value will be used instead.
+
 <a name="installation"></a>
 ## Installation
 Run bower install in your project as follows:
@@ -133,6 +133,7 @@ See [contributing guide](.github/CONTRIBUTING.md)
 
 | Date        | Version | Description |
 | ----------- | ------- | ----------- |
+| 2016-07-11  | v0.0.27 | Service can now provide min/max/step values and template values override service values |
 | 2016-07-06  | v0.0.26 | Maintenance |
 | 2016-06-14  | v0.0.22 | Published via NPM (in addition to bower) |
 | 2016-06-14  | v0.0.21 | Maintenance |

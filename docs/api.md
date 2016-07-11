@@ -4,6 +4,15 @@
 <dt><a href="#NumberInputService+config">#config</a> : <code><a href="#Config">Config</a></code></dt>
 <dd><p>Holds the current configuration of the service and is populated by the directive instance.</p>
 </dd>
+<dt><a href="#NumberInputService+min">#min</a> : <code>number</code></dt>
+<dd><p>Optional min value.</p>
+</dd>
+<dt><a href="#NumberInputService+max">#max</a> : <code>number</code></dt>
+<dd><p>Optional max value.</p>
+</dd>
+<dt><a href="#NumberInputService+step">#step</a> : <code>number</code></dt>
+<dd><p>Optional step value.</p>
+</dd>
 <dt><a href="#numberInput">numberInput</a> ⇒ <code>object</code></dt>
 <dd><p>The number-input is an angular directive which provides number validation, parsing and formatting capabilities.</p>
 </dd>
@@ -60,6 +69,9 @@ Service definition used by the number input to extend the number input capabilit
 
 * [NumberInputService](#NumberInputService)
     * [#config](#NumberInputService+config) : <code>[Config](#Config)</code>
+    * [#min](#NumberInputService+min) : <code>number</code>
+    * [#max](#NumberInputService+max) : <code>number</code>
+    * [#step](#NumberInputService+step) : <code>number</code>
     * [#create()](#NumberInputService+create) ⇒ <code>object</code>
     * [#validate([modelValue], [viewValue])](#NumberInputService+validate) ⇒ <code>boolean</code>
     * [#parse([value])](#NumberInputService+parse) ⇒ <code>object</code>
@@ -70,6 +82,27 @@ Service definition used by the number input to extend the number input capabilit
 
 ### NumberInputService#config : <code>[Config](#Config)</code>
 Holds the current configuration of the service and is populated by the directive instance.
+
+**Kind**: global property of <code>[NumberInputService](#NumberInputService)</code>  
+**Access:** public  
+<a name="NumberInputService+min"></a>
+
+### NumberInputService#min : <code>number</code>
+Optional min value.
+
+**Kind**: global property of <code>[NumberInputService](#NumberInputService)</code>  
+**Access:** public  
+<a name="NumberInputService+max"></a>
+
+### NumberInputService#max : <code>number</code>
+Optional max value.
+
+**Kind**: global property of <code>[NumberInputService](#NumberInputService)</code>  
+**Access:** public  
+<a name="NumberInputService+step"></a>
+
+### NumberInputService#step : <code>number</code>
+Optional step value.
 
 **Kind**: global property of <code>[NumberInputService](#NumberInputService)</code>  
 **Access:** public  
