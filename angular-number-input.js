@@ -555,9 +555,6 @@
      * <!-- using angular service for common custom validation/formatting/parsing -->
      * <input type="text" class="number-input"
      *   ng-model="value"
-     *   min="-100"
-     *   max="100"
-     *   step="0.5"
      *   service="myService">
      * ```
      */

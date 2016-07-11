@@ -68,6 +68,9 @@ angular.module('moneyModule', []).service('myMoneyService', function () {
         create: function () {
             return {
                 config: null, //will be populated by the directive with the config which holds the min/max/step/... values
+                min: 10,
+                max: 100,
+                step: 5,
                 format: function (value) {
                     if (value) {
                         value = '$' + value;
