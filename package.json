@@ -1,6 +1,6 @@
 {
   "name": "angular-number-input",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "description": "AngularJS number input directive.",
   "author": {
     "name": "Sagie Gur-Ari",
@@ -33,6 +33,7 @@
     "docs": "grunt docs",
     "format": "grunt format",
     "build": "grunt build",
+    "jstest": "grunt jstest",
     "prepush": "npm run build",
     "synclibs": "npm install && npm update"
   },
