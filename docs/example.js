@@ -3,17 +3,14 @@ window.angular.module('exampleApp', ['number-input']).controller('exampleCntrl',
     function onCreate($scope) {
         'use strict';
 
-        $scope.$watch('value1', function onValueChange(newValue, oldValue) {
-            $scope.message1 = 'Value: ' + newValue + ' Was: ' + oldValue;
-        });
+        var index;
+        for (index = 1; index <= 3; index++) {
+            $scope.$watch('value' + index, function onValueChange(newValue, oldValue) {
+                $scope['message' + index] = 'Value: ' + newValue + ' Was: ' + oldValue;
+            });
 
-        $scope.value1 = 10;
-
-        $scope.$watch('value2', function onValueChange(newValue, oldValue) {
-            $scope.message2 = 'Value: ' + newValue + ' Was: ' + oldValue;
-        });
-
-        $scope.value2 = 10;
+            $scope['value' + index] = 10;
+        }
 
         $scope.dollarParser = function (value) {
             if (value) {
@@ -34,14 +31,10 @@ window.angular.module('exampleApp', ['number-input']).controller('exampleCntrl',
 
             return value;
         };
-
-        $scope.$watch('value2', function onValueChange(newValue, oldValue) {
-            $scope.message2 = 'Value: ' + newValue + ' Was: ' + oldValue;
-        });
-
-        $scope.value3 = 100;
     }
 ]).service('exampleDollarService', function () {
+    'use strict';
+
     return {
         create: function () {
             return {
