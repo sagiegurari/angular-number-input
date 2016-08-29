@@ -6,7 +6,7 @@
 > AngularJS number input directive
 
 * [Overview](#overview)
-* [Demo](http://plnkr.co/edit/Fip3UQvEi2KAjPHGnxiV?p=preview)
+* [Demo](https://sagiegurari.github.io/angular-number-input/)
 * [Usage](#usage)
 * [Installation](#installation)
 * [API Documentation](docs/api.md)
@@ -20,7 +20,7 @@ The number-input is an angular directive which provides number validation, parsi
 on any HTML element.
 
 ## Demo
-[Live Demo at Plunker](http://plnkr.co/edit/Fip3UQvEi2KAjPHGnxiV?p=preview)
+[Live Demo](https://sagiegurari.github.io/angular-number-input/)
 
 <a name="usage"></a>
 ## Usage
@@ -136,7 +136,7 @@ See [contributing guide](.github/CONTRIBUTING.md)
 
 | Date        | Version | Description |
 | ----------- | ------- | ----------- |
-| 2016-08-28  | v1.0.1  | Maintenance |
+| 2016-08-29  | v1.0.2  | Maintenance |
 | 2016-07-11  | v0.0.27 | Service can now provide min/max/step values and template values override service values |
 | 2016-07-06  | v0.0.26 | Maintenance |
 | 2016-06-14  | v0.0.22 | Published via NPM (in addition to bower) |

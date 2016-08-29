@@ -6,7 +6,7 @@
 > AngularJS number input directive
 
 * [Overview](#overview)
-* [Demo](http://plnkr.co/edit/Fip3UQvEi2KAjPHGnxiV?p=preview)
+* [Demo](https://sagiegurari.github.io/angular-number-input/)
 * [Usage](#usage)
 * [Installation](#installation)
 * [API Documentation](docs/api.md)
@@ -20,7 +20,7 @@ The number-input is an angular directive which provides number validation, parsi
 on any HTML element.
 
 ## Demo
-[Live Demo at Plunker](http://plnkr.co/edit/Fip3UQvEi2KAjPHGnxiV?p=preview)
+[Live Demo](https://sagiegurari.github.io/angular-number-input/)
 
 <a name="usage"></a>
 ## Usage
