@@ -6,10 +6,8 @@ window.angular.module('exampleApp', ['number-input']).controller('exampleCntrl',
         var index;
         for (index = 1; index <= 3; index++) {
             $scope.$watch('value' + index, function onValueChange(newValue, oldValue) {
-                var message = 'Value: ' + newValue + ' Was: ' + oldValue;
-
-                console.log(message);
-                $scope['message' + index] = message;
+                $scope['message' + index] = 'Value: ' + newValue + ' Was: ' + oldValue;
+                console.log($scope['message' + index]);
             });
 
             $scope['value' + index] = 10;
