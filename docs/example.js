@@ -3,12 +3,16 @@ window.angular.module('exampleApp', ['number-input']).controller('exampleCntrl',
     function onCreate($scope) {
         'use strict';
 
+        var createWatch = function (num) {
+            return function onValueChange(newValue, oldValue) {
+                $scope['message' + num] = 'Value: ' + newValue + ' Was: ' + oldValue;
+                console.log($scope['message' + num]);
+            };
+        };
+
         var index;
         for (index = 1; index <= 3; index++) {
-            $scope.$watch('value' + index, function onValueChange(newValue, oldValue) {
-                $scope['message' + index] = 'Value: ' + newValue + ' Was: ' + oldValue;
-                console.log($scope['message' + index]);
-            });
+            $scope.$watch('value' + index, createWatch(index));
 
             $scope['value' + index] = 10;
         }
