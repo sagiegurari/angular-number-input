@@ -186,6 +186,70 @@
                 };
 
                 /**
+                 * Initializes the state attributes based on the current service capabilities.
+                 *
+                 * @function
+                 * @memberof! numberInput
+                 * @private
+                 */
+                var initAttributesFromService = function () {
+                    if ((min === undefined) && (!isNaN(service.min))) {
+                        min = service.min;
+                        serviceState.min = true;
+                    } else {
+                        delete serviceState.min;
+                    }
+
+                    if ((max === undefined) && (!isNaN(service.max))) {
+                        max = service.max;
+                        serviceState.max = true;
+                    } else {
+                        delete serviceState.max;
+                    }
+
+                    if ((step === undefined) && (!isNaN(service.step))) {
+                        step = service.step;
+                        serviceState.step = true;
+                    } else {
+                        delete serviceState.step;
+                    }
+                };
+
+                /**
+                 * Initializes the state functions based on the current service capabilities.
+                 *
+                 * @function
+                 * @memberof! numberInput
+                 * @private
+                 */
+                var initFunctionsFromService = function () {
+                    if (service.link) {
+                        service.link(scope, element, attrs, ngModelCtrl);
+                    }
+
+                    if ((!validation) && service.validate) {
+                        validation = service.validate.bind(service);
+                        serviceState.validation = true;
+                    } else {
+                        delete serviceState.validation;
+                    }
+
+                    if ((!parser) && service.parse) {
+                        parser = service.parse.bind(service);
+                        serviceState.parser = true;
+                    } else {
+                        delete serviceState.parser;
+                    }
+
+                    if ((!formatter) && service.format) {
+                        formatter = service.format.bind(service);
+                        serviceState.formatter = true;
+                    } else {
+                        delete serviceState.formatter;
+                    }
+                };
+
+                /**
                  * Initializes the state based on the current service capabilities.
                  *
                  * @function
@@ -194,53 +258,11 @@
                  */
                 var initStateFromService = function () {
                     if (service) {
-                        if ((min === undefined) && (!isNaN(service.min))) {
-                            min = service.min;
-                            serviceState.min = true;
-                        } else {
-                            delete serviceState.min;
-                        }
-
-                        if ((max === undefined) && (!isNaN(service.max))) {
-                            max = service.max;
-                            serviceState.max = true;
-                        } else {
-                            delete serviceState.max;
-                        }
-
-                        if ((step === undefined) && (!isNaN(service.step))) {
-                            step = service.step;
-                            serviceState.step = true;
-                        } else {
-                            delete serviceState.step;
-                        }
+                        initAttributesFromService();
 
                         setConfig();
 
-                        if (service.link) {
-                            service.link(scope, element, attrs, ngModelCtrl);
-                        }
-
-                        if ((!validation) && service.validate) {
-                            validation = service.validate.bind(service);
-                            serviceState.validation = true;
-                        } else {
-                            delete serviceState.validation;
-                        }
-
-                        if ((!parser) && service.parse) {
-                            parser = service.parse.bind(service);
-                            serviceState.parser = true;
-                        } else {
-                            delete serviceState.parser;
-                        }
-
-                        if ((!formatter) && service.format) {
-                            formatter = service.format.bind(service);
-                            serviceState.formatter = true;
-                        } else {
-                            delete serviceState.formatter;
-                        }
+                        initFunctionsFromService();
                     }
                 };
 
