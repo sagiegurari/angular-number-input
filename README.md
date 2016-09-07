@@ -1,6 +1,6 @@
 # angular-number-input
 
-[![Bower Version](https://img.shields.io/bower/v/angular-number-input.svg?style=flat)](https://github.com/sagiegurari/angular-number-input/releases) [![NPM Version](http://img.shields.io/npm/v/angular-number-input.svg?style=flat)](https://www.npmjs.org/package/angular-number-input) [![Build Status](https://travis-ci.org/sagiegurari/angular-number-input.svg)](http://travis-ci.org/sagiegurari/angular-number-input) [![Coverage Status](https://coveralls.io/repos/sagiegurari/angular-number-input/badge.svg)](https://coveralls.io/r/sagiegurari/angular-number-input) [![Code Climate](https://codeclimate.com/github/sagiegurari/angular-number-input/badges/gpa.svg)](https://codeclimate.com/github/sagiegurari/angular-number-input) [![bitHound Code](https://www.bithound.io/github/sagiegurari/angular-number-input/badges/code.svg)](https://www.bithound.io/github/sagiegurari/angular-number-input) [![Inline docs](http://inch-ci.org/github/sagiegurari/angular-number-input.svg?branch=master)](http://inch-ci.org/github/sagiegurari/angular-number-input)<br>
+[![Bower Version](https://img.shields.io/bower/v/angular-number-input.svg?style=flat)](https://github.com/sagiegurari/angular-number-input/releases) [![NPM Version](http://img.shields.io/npm/v/angular-number-input.svg?style=flat)](https://www.npmjs.org/package/angular-number-input) [![Build Status](https://travis-ci.org/sagiegurari/angular-number-input.svg)](http://travis-ci.org/sagiegurari/angular-number-input) [![Coverage Status](https://coveralls.io/repos/sagiegurari/angular-number-input/badge.svg)](https://coveralls.io/r/sagiegurari/angular-number-input) [![bitHound Code](https://www.bithound.io/github/sagiegurari/angular-number-input/badges/code.svg)](https://www.bithound.io/github/sagiegurari/angular-number-input) [![Inline docs](http://inch-ci.org/github/sagiegurari/angular-number-input.svg?branch=master)](http://inch-ci.org/github/sagiegurari/angular-number-input)<br>
 [![License](https://img.shields.io/bower/l/angular-number-input.svg)](https://github.com/sagiegurari/angular-number-input/blob/master/LICENSE) [![Retire Status](http://retire.insecurity.today/api/image?uri=https://raw.githubusercontent.com/sagiegurari/angular-number-input/master/bower.json)](http://retire.insecurity.today/api/image?uri=https://raw.githubusercontent.com/sagiegurari/angular-number-input/master/bower.json)
 
 > AngularJS number input directive
@@ -136,7 +136,7 @@ See [contributing guide](.github/CONTRIBUTING.md)
 
 | Date        | Version | Description |
 | ----------- | ------- | ----------- |
-| 2016-08-29  | v1.0.2  | Maintenance |
+| 2016-09-07  | v1.0.3  | Maintenance |
 | 2016-07-11  | v0.0.27 | Service can now provide min/max/step values and template values override service values |
 | 2016-07-06  | v0.0.26 | Maintenance |
 | 2016-06-14  | v0.0.22 | Published via NPM (in addition to bower) |
