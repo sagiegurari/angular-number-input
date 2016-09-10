@@ -1,6 +1,6 @@
 {
   "name": "angular-number-input",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "AngularJS number input directive.",
   "author": {
     "name": "Sagie Gur-Ari",
@@ -64,7 +64,6 @@
     "karma-mocha": "latest",
     "karma-phantomjs-launcher": "latest",
     "karma-sinon-chai": "latest",
-    "load-grunt-configs": "latest",
     "lolex": "latest",
     "mocha": "latest",
     "phantomjs-prebuilt": "latest",
