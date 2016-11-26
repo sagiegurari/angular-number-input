@@ -1,6 +1,6 @@
 {
   "name": "angular-number-input",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "AngularJS number input directive.",
   "author": {
     "name": "Sagie Gur-Ari",
@@ -34,7 +34,9 @@
     "format": "grunt format",
     "build": "grunt build",
     "jstest": "grunt jstest",
+    "debug": "mocha --debug-brk=5858 --no-timeouts --ui bdd --reporter spec --recursive ./test/spec",
     "prepush": "npm run build",
+    "postpublish": "grunt post-publish",
     "grunt": "grunt"
   },
   "devDependencies": {
