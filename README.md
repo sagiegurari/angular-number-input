@@ -136,7 +136,7 @@ See [contributing guide](.github/CONTRIBUTING.md)
 
 | Date        | Version | Description |
 | ----------- | ------- | ----------- |
-| 2016-12-16  | v1.0.15 | Maintenance |
+| 2016-12-20  | v1.0.16 | Maintenance |
 | 2016-07-11  | v0.0.27 | Service can now provide min/max/step values and template values override service values |
 | 2016-07-06  | v0.0.26 | Maintenance |
 | 2016-06-14  | v0.0.22 | Published via NPM (in addition to bower) |
