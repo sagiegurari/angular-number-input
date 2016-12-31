@@ -4,16 +4,16 @@
 <dt><a href="#NumberInputService+config">#config</a> : <code><a href="#Config">Config</a></code></dt>
 <dd><p>Holds the current configuration of the service and is populated by the directive instance.</p>
 </dd>
-<dt><a href="#NumberInputService+min">#min</a> : <code>number</code></dt>
+<dt><a href="#NumberInputService+min">#min</a> : <code>Number</code></dt>
 <dd><p>Optional min value.</p>
 </dd>
-<dt><a href="#NumberInputService+max">#max</a> : <code>number</code></dt>
+<dt><a href="#NumberInputService+max">#max</a> : <code>Number</code></dt>
 <dd><p>Optional max value.</p>
 </dd>
-<dt><a href="#NumberInputService+step">#step</a> : <code>number</code></dt>
+<dt><a href="#NumberInputService+step">#step</a> : <code>Number</code></dt>
 <dd><p>Optional step value.</p>
 </dd>
-<dt><a href="#numberInput">numberInput</a> ⇒ <code>object</code></dt>
+<dt><a href="#numberInput">numberInput</a> ⇒ <code>Object</code></dt>
 <dd><p>The number-input is an angular directive which provides number validation, parsing and formatting capabilities.</p>
 </dd>
 </dl>
@@ -21,18 +21,18 @@
 ## Functions
 
 <dl>
-<dt><a href="#NumberInputService+create">#create()</a> ⇒ <code>object</code></dt>
+<dt><a href="#NumberInputService+create">#create()</a> ⇒ <code>Object</code></dt>
 <dd><p>Returns an instance of the service used by a specific directive instance.</p>
 </dd>
-<dt><a href="#NumberInputService+validate">#validate([modelValue], [viewValue])</a> ⇒ <code>boolean</code></dt>
+<dt><a href="#NumberInputService+validate">#validate([modelValue], [viewValue])</a> ⇒ <code>Boolean</code></dt>
 <dd><p>Optional validation function.<br>
 This function is optional and it is not required to implement it.</p>
 </dd>
-<dt><a href="#NumberInputService+parse">#parse([value])</a> ⇒ <code>object</code></dt>
+<dt><a href="#NumberInputService+parse">#parse([value])</a> ⇒ <code>Object</code></dt>
 <dd><p>Optional parser function.<br>
 This function is optional and it is not required to implement it.</p>
 </dd>
-<dt><a href="#NumberInputService+format">#format([value])</a> ⇒ <code>object</code></dt>
+<dt><a href="#NumberInputService+format">#format([value])</a> ⇒ <code>Object</code></dt>
 <dd><p>Optional formatter function.<br>
 This function is optional and it is not required to implement it.</p>
 </dd>
@@ -53,7 +53,7 @@ This function is optional and it is not required to implement it.</p>
 ## Typedefs
 
 <dl>
-<dt><a href="#Config">Config</a> : <code>object</code></dt>
+<dt><a href="#Config">Config</a> : <code>Object</code></dt>
 <dd><p>The directive configuration.</p>
 </dd>
 </dl>
@@ -69,13 +69,13 @@ Service definition used by the number input to extend the number input capabilit
 
 * [NumberInputService](#NumberInputService)
     * [#config](#NumberInputService+config) : <code>[Config](#Config)</code>
-    * [#min](#NumberInputService+min) : <code>number</code>
-    * [#max](#NumberInputService+max) : <code>number</code>
-    * [#step](#NumberInputService+step) : <code>number</code>
-    * [#create()](#NumberInputService+create) ⇒ <code>object</code>
-    * [#validate([modelValue], [viewValue])](#NumberInputService+validate) ⇒ <code>boolean</code>
-    * [#parse([value])](#NumberInputService+parse) ⇒ <code>object</code>
-    * [#format([value])](#NumberInputService+format) ⇒ <code>object</code>
+    * [#min](#NumberInputService+min) : <code>Number</code>
+    * [#max](#NumberInputService+max) : <code>Number</code>
+    * [#step](#NumberInputService+step) : <code>Number</code>
+    * [#create()](#NumberInputService+create) ⇒ <code>Object</code>
+    * [#validate([modelValue], [viewValue])](#NumberInputService+validate) ⇒ <code>Boolean</code>
+    * [#parse([value])](#NumberInputService+parse) ⇒ <code>Object</code>
+    * [#format([value])](#NumberInputService+format) ⇒ <code>Object</code>
     * [#link(scope, element, attributes, ngModelCtrl)](#NumberInputService+link)
 
 <a name="NumberInputService+config"></a>
@@ -87,75 +87,75 @@ Holds the current configuration of the service and is populated by the directive
 **Access:** public  
 <a name="NumberInputService+min"></a>
 
-### NumberInputService#min : <code>number</code>
+### NumberInputService#min : <code>Number</code>
 Optional min value.
 
 **Kind**: global property of <code>[NumberInputService](#NumberInputService)</code>  
 **Access:** public  
 <a name="NumberInputService+max"></a>
 
-### NumberInputService#max : <code>number</code>
+### NumberInputService#max : <code>Number</code>
 Optional max value.
 
 **Kind**: global property of <code>[NumberInputService](#NumberInputService)</code>  
 **Access:** public  
 <a name="NumberInputService+step"></a>
 
-### NumberInputService#step : <code>number</code>
+### NumberInputService#step : <code>Number</code>
 Optional step value.
 
 **Kind**: global property of <code>[NumberInputService](#NumberInputService)</code>  
 **Access:** public  
 <a name="NumberInputService+create"></a>
 
-### NumberInputService#create() ⇒ <code>object</code>
+### NumberInputService#create() ⇒ <code>Object</code>
 Returns an instance of the service used by a specific directive instance.
 
 **Kind**: global method of <code>[NumberInputService](#NumberInputService)</code>  
-**Returns**: <code>object</code> - The service instance  
+**Returns**: <code>Object</code> - The service instance  
 **Access:** public  
 <a name="NumberInputService+validate"></a>
 
-### NumberInputService#validate([modelValue], [viewValue]) ⇒ <code>boolean</code>
+### NumberInputService#validate([modelValue], [viewValue]) ⇒ <code>Boolean</code>
 Optional validation function.<br>
 This function is optional and it is not required to implement it.
 
 **Kind**: global method of <code>[NumberInputService](#NumberInputService)</code>  
-**Returns**: <code>boolean</code> - true if valid  
+**Returns**: <code>Boolean</code> - true if valid  
 **Access:** public  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [modelValue] | <code>object</code> | The model value |
-| [viewValue] | <code>object</code> | The UI view value |
+| [modelValue] | <code>Object</code> | The model value |
+| [viewValue] | <code>Object</code> | The UI view value |
 
 <a name="NumberInputService+parse"></a>
 
-### NumberInputService#parse([value]) ⇒ <code>object</code>
+### NumberInputService#parse([value]) ⇒ <code>Object</code>
 Optional parser function.<br>
 This function is optional and it is not required to implement it.
 
 **Kind**: global method of <code>[NumberInputService](#NumberInputService)</code>  
-**Returns**: <code>object</code> - The parsed value  
+**Returns**: <code>Object</code> - The parsed value  
 **Access:** public  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [value] | <code>object</code> | The value to parse |
+| [value] | <code>Object</code> | The value to parse |
 
 <a name="NumberInputService+format"></a>
 
-### NumberInputService#format([value]) ⇒ <code>object</code>
+### NumberInputService#format([value]) ⇒ <code>Object</code>
 Optional formatter function.<br>
 This function is optional and it is not required to implement it.
 
 **Kind**: global method of <code>[NumberInputService](#NumberInputService)</code>  
-**Returns**: <code>object</code> - The formatted value  
+**Returns**: <code>Object</code> - The formatted value  
 **Access:** public  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [value] | <code>object</code> | The value to format |
+| [value] | <code>Object</code> | The value to format |
 
 <a name="NumberInputService+link"></a>
 
@@ -168,31 +168,31 @@ This function is optional and it is not required to implement it.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| scope | <code>object</code> | The angular scope for the element |
-| element | <code>object</code> | The jquery element on which the directive is defined on |
-| attributes | <code>object</code> | Provides access to the element attributes |
-| ngModelCtrl | <code>object</code> | The angular model controller |
+| scope | <code>Object</code> | The angular scope for the element |
+| element | <code>Object</code> | The jquery element on which the directive is defined on |
+| attributes | <code>Object</code> | Provides access to the element attributes |
+| ngModelCtrl | <code>Object</code> | The angular model controller |
 
 <a name="numberInput"></a>
 
-## numberInput ⇒ <code>object</code>
+## numberInput ⇒ <code>Object</code>
 The number-input is an angular directive which provides number validation, parsing and formatting capabilities.
 
 **Kind**: global variable  
-**Returns**: <code>object</code> - The directive definition  
+**Returns**: <code>Object</code> - The directive definition  
 **Ngdoc**: directive  
 **Restrict**: ECA  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| ng-model | <code>number</code> | The model for the number input |
-| [min] | <code>number</code> | Optional min number value |
-| [max] | <code>number</code> | Optional max number value |
-| [step] | <code>number</code> | Optional step between numbers |
+| ng-model | <code>Number</code> | The model for the number input |
+| [min] | <code>Number</code> | Optional min number value |
+| [max] | <code>Number</code> | Optional max number value |
+| [step] | <code>Number</code> | Optional step between numbers |
 | [validation] | <code>function</code> | Optional external validation function |
 | [parser] | <code>function</code> | Optional external parser function |
 | [formatter] | <code>function</code> | Optional external formatter function |
-| [service] | <code>string</code> | Optional service to inject which will be used to control the directive behaviour (will override validation, parser and formatter attributes) |
+| [service] | <code>String</code> | Optional service to inject which will be used to control the directive behaviour (will override validation, parser and formatter attributes) |
 
 **Example**  
 ```html
@@ -220,18 +220,18 @@ Event which will update the model and view value.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [modelValue] | <code>object</code> | The new model value (undefined to use the ngModelCtrl.$modelValue instead) |
+| [modelValue] | <code>Object</code> | The new model value (undefined to use the ngModelCtrl.$modelValue instead) |
 
 <a name="Config"></a>
 
-## Config : <code>object</code>
+## Config : <code>Object</code>
 The directive configuration.
 
 **Kind**: global typedef  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [min] | <code>number</code> | Optional min number value |
-| [max] | <code>number</code> | Optional max number value |
-| [step] | <code>number</code> | Optional step between numbers |
+| [min] | <code>Number</code> | Optional min number value |
+| [max] | <code>Number</code> | Optional max number value |
+| [step] | <code>Number</code> | Optional step between numbers |
 

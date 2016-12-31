@@ -4,7 +4,7 @@
  * Event which will update the model and view value.
  *
  * @event number-input$update-model
- * @param {object} [modelValue] - The new model value (undefined to use the ngModelCtrl.$modelValue instead)
+ * @param {Object} [modelValue] - The new model value (undefined to use the ngModelCtrl.$modelValue instead)
  */
 
 /**
@@ -22,16 +22,16 @@
  * @memberof! NumberInputService
  * @name NumberInputService#create
  * @public
- * @returns {object} The service instance
+ * @returns {Object} The service instance
  */
 
 /**
  * The directive configuration.
  *
- * @typedef {object} Config
- * @param {number} [min] - Optional min number value
- * @param {number} [max] - Optional max number value
- * @param {number} [step] - Optional step between numbers
+ * @typedef {Object} Config
+ * @param {Number} [min] - Optional min number value
+ * @param {Number} [max] - Optional max number value
+ * @param {Number} [step] - Optional step between numbers
  */
 
 /**
@@ -48,7 +48,7 @@
  *
  * @memberof! NumberInputService
  * @name NumberInputService#min
- * @type {number}
+ * @type {Number}
  * @public
  */
 
@@ -57,7 +57,7 @@
  *
  * @memberof! NumberInputService
  * @name NumberInputService#max
- * @type {number}
+ * @type {Number}
  * @public
  */
 
@@ -66,7 +66,7 @@
  *
  * @memberof! NumberInputService
  * @name NumberInputService#step
- * @type {number}
+ * @type {Number}
  * @public
  */
 
@@ -78,9 +78,9 @@
  * @memberof! NumberInputService
  * @name NumberInputService#validate
  * @public
- * @param {object} [modelValue] - The model value
- * @param {object} [viewValue] - The UI view value
- * @returns {boolean} true if valid
+ * @param {Object} [modelValue] - The model value
+ * @param {Object} [viewValue] - The UI view value
+ * @returns {Boolean} true if valid
  */
 
 /**
@@ -91,8 +91,8 @@
  * @memberof! NumberInputService
  * @name NumberInputService#parse
  * @public
- * @param {object} [value] - The value to parse
- * @returns {object} The parsed value
+ * @param {Object} [value] - The value to parse
+ * @returns {Object} The parsed value
  */
 
 /**
@@ -103,8 +103,8 @@
  * @memberof! NumberInputService
  * @name NumberInputService#format
  * @public
- * @param {object} [value] - The value to format
- * @returns {object} The formatted value
+ * @param {Object} [value] - The value to format
+ * @returns {Object} The formatted value
  */
 
 /**
@@ -115,10 +115,10 @@
  * @memberof! NumberInputService
  * @name NumberInputService#link
  * @public
- * @param {object} scope - The angular scope for the element
- * @param {object} element - The jquery element on which the directive is defined on
- * @param {object} attributes - Provides access to the element attributes
- * @param {object} ngModelCtrl - The angular model controller
+ * @param {Object} scope - The angular scope for the element
+ * @param {Object} element - The jquery element on which the directive is defined on
+ * @param {Object} attributes - Provides access to the element attributes
+ * @param {Object} ngModelCtrl - The angular model controller
  */
 
 /**
@@ -141,8 +141,8 @@
      * @function
      * @memberof! numberInput
      * @private
-     * @param {object} $injector - The angular injector service
-     * @returns {object} The directive definition
+     * @param {Object} $injector - The angular injector service
+     * @returns {Object} The directive definition
      */
     var defineDirective = function ($injector) {
         return {
@@ -155,10 +155,10 @@
              * @function
              * @memberof! numberInput
              * @private
-             * @param {object} scope - The angular scope for the element
-             * @param {object} element - The jquery element on which the directive is defined on
-             * @param {object} attrs - Provides access to the element attributes
-             * @param {object} ngModelCtrl - The angular model controller
+             * @param {Object} scope - The angular scope for the element
+             * @param {Object} element - The jquery element on which the directive is defined on
+             * @param {Object} attrs - Provides access to the element attributes
+             * @param {Object} ngModelCtrl - The angular model controller
              */
             link: function (scope, element, attrs, ngModelCtrl) {
                 var min;
@@ -272,7 +272,7 @@
                  * @function
                  * @memberof! numberInput
                  * @private
-                 * @param {string} serviceName - The service name to inject
+                 * @param {String} serviceName - The service name to inject
                  */
                 var initService = function (serviceName) {
                     if (serviceName) {
@@ -316,8 +316,8 @@
                  * @function
                  * @memberof! numberInput
                  * @private
-                 * @param {object} value - The value to format
-                 * @returns {string} The formatted value
+                 * @param {Object} value - The value to format
+                 * @returns {String} The formatted value
                  */
                 var formatNumber = function (value) {
                     var number = value;
@@ -337,7 +337,7 @@
                  * @function
                  * @memberof! numberInput
                  * @private
-                 * @param {object} [modelValue] - The new model value (undefined to use the ngModelCtrl.$modelValue instead)
+                 * @param {Object} [modelValue] - The new model value (undefined to use the ngModelCtrl.$modelValue instead)
                  */
                 var updateViewValue = function (modelValue) {
                     if (modelValue === undefined) {
@@ -379,8 +379,8 @@
                  * @function
                  * @memberof! numberInput
                  * @private
-                 * @param {number} modelValue - The model value to validate
-                 * @returns {boolean} true if valid
+                 * @param {Number} modelValue - The model value to validate
+                 * @returns {Boolean} true if valid
                  */
                 ngModelCtrl.$validators.number = function (modelValue) {
                     return !isNaN(modelValue);
@@ -392,8 +392,8 @@
                  * @function
                  * @memberof! numberInput
                  * @private
-                 * @param {number} modelValue - The model value to validate
-                 * @returns {boolean} true if valid
+                 * @param {Number} modelValue - The model value to validate
+                 * @returns {Boolean} true if valid
                  */
                 ngModelCtrl.$validators.min = function (modelValue) {
                     return ((min === undefined) || (modelValue >= min));
@@ -405,8 +405,8 @@
                  * @function
                  * @memberof! numberInput
                  * @private
-                 * @param {number} modelValue - The model value to validate
-                 * @returns {boolean} true if valid
+                 * @param {Number} modelValue - The model value to validate
+                 * @returns {Boolean} true if valid
                  */
                 ngModelCtrl.$validators.max = function (modelValue) {
                     return ((max === undefined) || (modelValue <= max));
@@ -418,8 +418,8 @@
                  * @function
                  * @memberof! numberInput
                  * @private
-                 * @param {number} modelValue - The model value to validate
-                 * @returns {boolean} true if valid
+                 * @param {Number} modelValue - The model value to validate
+                 * @returns {Boolean} true if valid
                  */
                 ngModelCtrl.$validators.step = function (modelValue) {
                     return ((step === undefined) || ((((modelValue * 1000) / (step * 1000)) % 1) === 0));
@@ -431,9 +431,9 @@
                  * @function
                  * @memberof! numberInput
                  * @private
-                 * @param {number} modelValue - The model value to validate
-                 * @param {string} viewValue - The view value to validate
-                 * @returns {boolean} true if valid
+                 * @param {Number} modelValue - The model value to validate
+                 * @param {String} viewValue - The view value to validate
+                 * @returns {Boolean} true if valid
                  */
                 ngModelCtrl.$validators.external = function (modelValue, viewValue) {
                     var valid = true;
@@ -548,15 +548,15 @@
      * @name numberInput
      * @restrict ECA
      *
-     * @param {number} ng-model - The model for the number input
-     * @param {number} [min] - Optional min number value
-     * @param {number} [max] - Optional max number value
-     * @param {number} [step] - Optional step between numbers
+     * @param {Number} ng-model - The model for the number input
+     * @param {Number} [min] - Optional min number value
+     * @param {Number} [max] - Optional max number value
+     * @param {Number} [step] - Optional step between numbers
      * @param {function} [validation] - Optional external validation function
      * @param {function} [parser] - Optional external parser function
      * @param {function} [formatter] - Optional external formatter function
-     * @param {string} [service] - Optional service to inject which will be used to control the directive behaviour (will override validation, parser and formatter attributes)
-     * @returns {object} The directive definition
+     * @param {String} [service] - Optional service to inject which will be used to control the directive behaviour (will override validation, parser and formatter attributes)
+     * @returns {Object} The directive definition
      * @listens number-input$update-model
      *
      * @description
