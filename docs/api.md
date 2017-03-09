@@ -64,8 +64,8 @@ This function is optional and it is not required to implement it.</p>
 Service definition used by the number input to extend the number input capabilities.
 
 **Kind**: global interface  
-**Access:** public  
-**Author:** Sagie Gur-Ari  
+**Access**: public  
+**Author**: Sagie Gur-Ari  
 
 * [NumberInputService](#NumberInputService)
     * [#config](#NumberInputService+config) : <code>[Config](#Config)</code>
@@ -84,28 +84,28 @@ Service definition used by the number input to extend the number input capabilit
 Holds the current configuration of the service and is populated by the directive instance.
 
 **Kind**: global property of <code>[NumberInputService](#NumberInputService)</code>  
-**Access:** public  
+**Access**: public  
 <a name="NumberInputService+min"></a>
 
 ### NumberInputService#min : <code>Number</code>
 Optional min value.
 
 **Kind**: global property of <code>[NumberInputService](#NumberInputService)</code>  
-**Access:** public  
+**Access**: public  
 <a name="NumberInputService+max"></a>
 
 ### NumberInputService#max : <code>Number</code>
 Optional max value.
 
 **Kind**: global property of <code>[NumberInputService](#NumberInputService)</code>  
-**Access:** public  
+**Access**: public  
 <a name="NumberInputService+step"></a>
 
 ### NumberInputService#step : <code>Number</code>
 Optional step value.
 
 **Kind**: global property of <code>[NumberInputService](#NumberInputService)</code>  
-**Access:** public  
+**Access**: public  
 <a name="NumberInputService+create"></a>
 
 ### NumberInputService#create() ⇒ <code>Object</code>
@@ -113,7 +113,7 @@ Returns an instance of the service used by a specific directive instance.
 
 **Kind**: global method of <code>[NumberInputService](#NumberInputService)</code>  
 **Returns**: <code>Object</code> - The service instance  
-**Access:** public  
+**Access**: public  
 <a name="NumberInputService+validate"></a>
 
 ### NumberInputService#validate([modelValue], [viewValue]) ⇒ <code>Boolean</code>
@@ -122,7 +122,7 @@ This function is optional and it is not required to implement it.
 
 **Kind**: global method of <code>[NumberInputService](#NumberInputService)</code>  
 **Returns**: <code>Boolean</code> - true if valid  
-**Access:** public  
+**Access**: public  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -137,7 +137,7 @@ This function is optional and it is not required to implement it.
 
 **Kind**: global method of <code>[NumberInputService](#NumberInputService)</code>  
 **Returns**: <code>Object</code> - The parsed value  
-**Access:** public  
+**Access**: public  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -151,7 +151,7 @@ This function is optional and it is not required to implement it.
 
 **Kind**: global method of <code>[NumberInputService](#NumberInputService)</code>  
 **Returns**: <code>Object</code> - The formatted value  
-**Access:** public  
+**Access**: public  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -164,7 +164,7 @@ Will be called only once when the directive has access to the service.<br>
 This function is optional and it is not required to implement it.
 
 **Kind**: global method of <code>[NumberInputService](#NumberInputService)</code>  
-**Access:** public  
+**Access**: public  
 
 | Param | Type | Description |
 | --- | --- | --- |
