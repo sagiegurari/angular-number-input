@@ -8,25 +8,25 @@
         <script type="text/javascript" src="https://rawgit.com/sagiegurari/angular-number-input/master/angular-number-input.js"></script>
         <script type="text/javascript" src="example/example.js"></script>
 
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="example/example.css" rel="stylesheet"/>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="example/example.css" rel="stylesheet" />
     </head>
 
     <body ng-controller="exampleCntrl">
         <form class="example-form">
             <div class="form-group">
                 <label>Number:</label>
-                <input type="text" class="number-input form-control" ng-model="value1" min="-100" max="100" step="0.5"/>
+                <input type="text" class="number-input form-control" ng-model="value1" min="-100" max="100" step="0.5" />
                 <span ng-bind="message1" class="help-block"></span>
             </div>
             <div class="form-group">
                 <label>Dollars:</label>
-                <input type="text" class="number-input form-control" ng-model="value2" min="-100" max="100" step="0.5" parser="dollarParser" formatter="dollarFormatter"/>
+                <input type="text" class="number-input form-control" ng-model="value2" min="-100" max="100" step="0.5" parser="dollarParser" formatter="dollarFormatter" />
                 <span ng-bind="message2" class="help-block"></span>
             </div>
             <div class="form-group">
                 <label>Service:</label>
-                <input type="text" class="number-input form-control" ng-model="value3" service="exampleDollarService"/>
+                <input type="text" class="number-input form-control" ng-model="value3" service="exampleDollarService" />
                 <span ng-bind="message3" class="help-block"></span>
             </div>
         </form>
