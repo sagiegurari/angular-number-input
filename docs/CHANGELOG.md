@@ -1,6 +1,6 @@
 | Date        | Version | Description |
 | ----------- | ------- | ----------- |
-| 2017-04-11  | v1.0.23 | Maintenance |
+| 2017-04-17  | v1.0.24 | Maintenance |
 | 2016-07-11  | v0.0.27 | Service can now provide min/max/step values and template values override service values |
 | 2016-07-06  | v0.0.26 | Maintenance |
 | 2016-06-14  | v0.0.22 | Published via NPM (in addition to bower) |
