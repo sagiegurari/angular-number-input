@@ -580,5 +580,8 @@
      *   service="myService">
      * ```
      */
-    numberInputModule.directive('numberInput', ['$injector', defineDirective]);
+    numberInputModule.directive('numberInput', [
+        '$injector',
+        defineDirective
+    ]);
 }());
