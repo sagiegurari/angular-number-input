@@ -136,7 +136,7 @@ See [contributing guide](.github/CONTRIBUTING.md)
 
 | Date        | Version | Description |
 | ----------- | ------- | ----------- |
-| 2017-11-06  | v1.0.36 | Maintenance |
+| 2017-11-07  | v1.0.37 | Maintenance |
 | 2016-07-11  | v0.0.27 | Service can now provide min/max/step values and template values override service values |
 | 2016-06-14  | v0.0.22 | Published via NPM (in addition to bower) |
 | 2016-05-17  | v0.0.14 | Directive element now listens to new number-input$update-model event |
