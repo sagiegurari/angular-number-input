@@ -169,6 +169,7 @@
                 var formatter;
                 var service;
                 var serviceState = {};
+                var linkCalled = false;
 
                 /**
                  * Sets the config for the service in case of any config change.
@@ -223,8 +224,9 @@
                  * @private
                  */
                 var initFunctionsFromService = function () {
-                    if (service.link) {
+                    if (service.link && !linkCalled) {
                         service.link(scope, element, attrs, ngModelCtrl);
+                        linkCalled = true;
                     }
 
                     if ((!validation) && service.validate) {
