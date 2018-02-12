@@ -450,7 +450,7 @@
                  * @returns {Boolean} true if valid
                  */
                 ngModelCtrl.$validators.step = function (modelValue) {
-                    return (step === undefined || isNaN(modelValue) || isNaN(step) || validateStep(modelValue, step));
+                    return (typeof modelValue !== 'number' || typeof step !== 'number' || isNaN(modelValue) || isNaN(step) || validateStep(modelValue, step));
                 };
 
                 /**
