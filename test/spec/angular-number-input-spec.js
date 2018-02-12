@@ -381,6 +381,60 @@ describe('number-input', function () {
                     }, 0);
                 });
             });
+
+            it('valid without big', function (done) {
+                inject(function ($compile, $rootScope) {
+                    var big = window.Big;
+                    assert.isDefined(big);
+                    delete window.Big;
+
+                    var scope = $rootScope.$new();
+
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" step="0.5"></form>');
+                    element = $compile(element)(scope);
+
+                    scope.value = 10.5;
+
+                    scope.$apply();
+
+                    window.Big = big;
+
+                    setTimeout(function () {
+                        assert.equal(element.find('.number-input').val(), '10.5');
+                        assert.equal(scope.value, 10.5);
+                        assert.isTrue(scope.testForm.$valid);
+
+                        done();
+                    }, 0);
+                });
+            });
+
+            it('invalid without big', function (done) {
+                inject(function ($compile, $rootScope) {
+                    var big = window.Big;
+                    assert.isDefined(big);
+                    delete window.Big;
+
+                    var scope = $rootScope.$new();
+
+                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" step="0.5"></form>');
+                    element = $compile(element)(scope);
+
+                    scope.value = 10.3;
+
+                    scope.$apply();
+
+                    window.Big = big;
+
+                    setTimeout(function () {
+                        assert.equal(element.find('.number-input').val(), '');
+                        assert.equal(scope.value, undefined);
+                        assert.isTrue(scope.testForm.$invalid);
+
+                        done();
+                    }, 0);
+                });
+            });
         });
 
         describe('external', function () {

@@ -12,6 +12,7 @@ module.exports = function (config) {
             'sinon-chai'
         ],
         files: [
+            'bower_components/big.js/big.js',
             'bower_components/jquery/dist/jquery.js',
             'bower_components/angular/angular.js',
             'bower_components/angular-mocks/angular-mocks.js',

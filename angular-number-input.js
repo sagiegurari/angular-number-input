@@ -376,6 +376,32 @@
                 scope.$watch(attrs.ngModel, updateViewValue);
 
                 /**
+                 * Returns a step validation function based on the currently loaded libraries.
+                 *
+                 * @function
+                 * @memberof! numberInput
+                 * @private
+                 * @returns {function} The step validation function
+                 */
+                var createStepValidation = function () {
+                    if (window.Big && typeof window.Big === 'function') {
+                        return function bigStepValidation(modelValue, stepValue) {
+                            var bigObj = new window.Big(modelValue);
+                            var divValue = bigObj.div(stepValue);
+                            var modValue = divValue.mod(1);
+                            modValue = parseFloat(modValue);
+
+                            return (modValue === 0);
+                        };
+                    }
+
+                    return function basicStepValidation(modelValue, stepValue) {
+                        return (((modelValue * 1000) / (stepValue * 1000) % 1) === 0);
+                    };
+                };
+                var validateStep = createStepValidation();
+
+                /**
                  * Will validate the provided value is a number.
                  *
                  * @function
@@ -424,7 +450,7 @@
                  * @returns {Boolean} true if valid
                  */
                 ngModelCtrl.$validators.step = function (modelValue) {
-                    return ((step === undefined) || ((((modelValue * 1000) / (step * 1000)) % 1) === 0));
+                    return (step === undefined || isNaN(modelValue) || isNaN(step) || validateStep(modelValue, step));
                 };
 
                 /**
