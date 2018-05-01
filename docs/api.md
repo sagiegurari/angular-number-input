@@ -58,6 +58,14 @@ This function is optional and it is not required to implement it.</p>
 </dd>
 </dl>
 
+## Interfaces
+
+<dl>
+<dt><a href="#NumberInputService">NumberInputService</a></dt>
+<dd><p>Service definition used by the number input to extend the number input capabilities.</p>
+</dd>
+</dl>
+
 <a name="NumberInputService"></a>
 
 ## NumberInputService
