@@ -1,7 +1,7 @@
 # angular-number-input
 
 [![Bower Version](https://img.shields.io/bower/v/angular-number-input.svg?style=flat)](https://github.com/sagiegurari/angular-number-input/releases) [![NPM Version](http://img.shields.io/npm/v/angular-number-input.svg?style=flat)](https://www.npmjs.org/package/angular-number-input) [![Build Status](https://travis-ci.org/sagiegurari/angular-number-input.svg)](http://travis-ci.org/sagiegurari/angular-number-input) [![Coverage Status](https://coveralls.io/repos/sagiegurari/angular-number-input/badge.svg)](https://coveralls.io/r/sagiegurari/angular-number-input) [![bitHound Code](https://www.bithound.io/github/sagiegurari/angular-number-input/badges/code.svg)](https://www.bithound.io/github/sagiegurari/angular-number-input) [![Inline docs](http://inch-ci.org/github/sagiegurari/angular-number-input.svg?branch=master)](http://inch-ci.org/github/sagiegurari/angular-number-input)<br>
-[![License](https://img.shields.io/bower/l/angular-number-input.svg)](https://github.com/sagiegurari/angular-number-input/blob/master/LICENSE) [![Known Vulnerabilities](https://snyk.io/test/github/sagiegurari/angular-number-input/badge.svg)](https://snyk.io/test/github/sagiegurari/angular-number-input) [![Retire Status](http://retire.insecurity.today/api/image?uri=https://raw.githubusercontent.com/sagiegurari/angular-number-input/master/bower.json)](http://retire.insecurity.today/api/image?uri=https://raw.githubusercontent.com/sagiegurari/angular-number-input/master/bower.json)
+[![License](https://img.shields.io/bower/l/angular-number-input.svg)](https://github.com/sagiegurari/angular-number-input/blob/master/LICENSE) [![Known Vulnerabilities](https://snyk.io/test/github/sagiegurari/angular-number-input/badge.svg)](https://snyk.io/test/github/sagiegurari/angular-number-input)
 
 > AngularJS number input directive
 
@@ -136,7 +136,7 @@ See [contributing guide](.github/CONTRIBUTING.md)
 
 | Date        | Version | Description |
 | ----------- | ------- | ----------- |
-| 2018-04-30  | v1.1.3  | Maintenance |
+| 2018-06-14  | v1.1.4  | Maintenance |
 | 2018-02-12  | v1.1.2  | Add support for step validations using big.js for more accurate calculations |
 | 2018-02-01  | v1.0.38 | Link function of the provided service will only be called once to prevent memory leaks |
 | 2016-07-11  | v0.0.27 | Service can now provide min/max/step values and template values override service values |
