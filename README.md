@@ -1,7 +1,6 @@
 # angular-number-input
 
-[![Bower Version](https://img.shields.io/bower/v/angular-number-input.svg?style=flat)](https://github.com/sagiegurari/angular-number-input/releases) [![NPM Version](http://img.shields.io/npm/v/angular-number-input.svg?style=flat)](https://www.npmjs.org/package/angular-number-input) [![Build Status](https://travis-ci.org/sagiegurari/angular-number-input.svg)](http://travis-ci.org/sagiegurari/angular-number-input) [![Coverage Status](https://coveralls.io/repos/sagiegurari/angular-number-input/badge.svg)](https://coveralls.io/r/sagiegurari/angular-number-input) [![Known Vulnerabilities](https://snyk.io/test/github/sagiegurari/angular-number-input/badge.svg)](https://snyk.io/test/github/sagiegurari/angular-number-input) [![Inline docs](http://inch-ci.org/github/sagiegurari/angular-number-input.svg?branch=master)](http://inch-ci.org/github/sagiegurari/angular-number-input)<br>
-[![License](https://img.shields.io/bower/l/angular-number-input.svg)](https://github.com/sagiegurari/angular-number-input/blob/master/LICENSE)
+[![NPM Version](http://img.shields.io/npm/v/angular-number-input.svg?style=flat)](https://www.npmjs.org/package/angular-number-input) [![Build Status](https://travis-ci.org/sagiegurari/angular-number-input.svg)](http://travis-ci.org/sagiegurari/angular-number-input) [![Coverage Status](https://coveralls.io/repos/sagiegurari/angular-number-input/badge.svg)](https://coveralls.io/r/sagiegurari/angular-number-input) [![Known Vulnerabilities](https://snyk.io/test/github/sagiegurari/angular-number-input/badge.svg)](https://snyk.io/test/github/sagiegurari/angular-number-input) [![Inline docs](http://inch-ci.org/github/sagiegurari/angular-number-input.svg?branch=master)](http://inch-ci.org/github/sagiegurari/angular-number-input) [![License](https://img.shields.io/npm/l/angular-number-input.svg?style=flat)](https://github.com/sagiegurari/angular-number-input/blob/master/LICENSE)
 
 > AngularJS number input directive
 
@@ -113,16 +112,16 @@ If the HTML provided value changes to undefined/null/invalid value, the service 
 
 <a name="installation"></a>
 ## Installation
-Run bower install in your project as follows:
-
-```sh
-bower install angular-number-input --save
-```
-
-Or if you are using NPM to download client libraries, you can install it as follows:
+Run npm install in your project as follows:
 
 ```sh
 npm install --save angular-number-input
+```
+
+Or if you are using bower, you can install it as follows:
+
+```sh
+bower install angular-number-input --save
 ```
 
 ## API Documentation
@@ -136,7 +135,7 @@ See [contributing guide](.github/CONTRIBUTING.md)
 
 | Date        | Version | Description |
 | ----------- | ------- | ----------- |
-| 2018-06-14  | v1.1.5  | Maintenance |
+| 2018-08-05  | v1.1.6  | Maintenance |
 | 2018-02-12  | v1.1.2  | Add support for step validations using big.js for more accurate calculations |
 | 2018-02-01  | v1.0.38 | Link function of the provided service will only be called once to prevent memory leaks |
 | 2016-07-11  | v0.0.27 | Service can now provide min/max/step values and template values override service values |
