@@ -1,6 +1,6 @@
 | Date        | Version | Description |
 | ----------- | ------- | ----------- |
-| 2018-08-05  | v1.1.6  | Maintenance |
+| 2019-02-08  | v1.1.7  | Maintenance |
 | 2018-02-12  | v1.1.2  | Add support for step validations using big.js for more accurate calculations |
 | 2018-02-01  | v1.0.38 | Link function of the provided service will only be called once to prevent memory leaks |
 | 2016-07-11  | v0.0.27 | Service can now provide min/max/step values and template values override service values |
