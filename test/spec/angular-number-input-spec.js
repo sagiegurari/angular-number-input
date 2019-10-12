@@ -1,4 +1,4 @@
-/*global describe: false, assert: false, inject: false, it: false, beforeEach: false */
+/*global assert: false, inject: false */
 
 describe('number-input', function () {
     'use strict';
