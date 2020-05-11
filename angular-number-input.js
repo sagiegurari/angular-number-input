@@ -144,7 +144,7 @@
      * @param {Object} $injector - The angular injector service
      * @returns {Object} The directive definition
      */
-    var defineDirective = function ($injector) {
+    const defineDirective = function ($injector) {
         return {
             restrict: 'ECA',
             require: 'ngModel',
@@ -160,16 +160,16 @@
              * @param {Object} attrs - Provides access to the element attributes
              * @param {Object} ngModelCtrl - The angular model controller
              */
-            link: function (scope, element, attrs, ngModelCtrl) {
-                var min;
-                var max;
-                var step;
-                var validation;
-                var parser;
-                var formatter;
-                var service;
-                var serviceState = {};
-                var linkCalled = false;
+            link(scope, element, attrs, ngModelCtrl) {
+                let min;
+                let max;
+                let step;
+                let validation;
+                let parser;
+                let formatter;
+                let service;
+                let serviceState = {};
+                let linkCalled = false;
 
                 /**
                  * Sets the config for the service in case of any config change.
@@ -178,11 +178,11 @@
                  * @memberof! numberInput
                  * @private
                  */
-                var setConfig = function () {
+                const setConfig = function () {
                     service.config = {
-                        min: min,
-                        max: max,
-                        step: step
+                        min,
+                        max,
+                        step
                     };
                 };
 
@@ -193,7 +193,7 @@
                  * @memberof! numberInput
                  * @private
                  */
-                var initAttributesFromService = function () {
+                const initAttributesFromService = function () {
                     if ((min === undefined) && (!isNaN(service.min))) {
                         min = service.min;
                         serviceState.min = true;
@@ -223,7 +223,7 @@
                  * @memberof! numberInput
                  * @private
                  */
-                var initFunctionsFromService = function () {
+                const initFunctionsFromService = function () {
                     if (service.link && !linkCalled) {
                         service.link(scope, element, attrs, ngModelCtrl);
                         linkCalled = true;
@@ -258,7 +258,7 @@
                  * @memberof! numberInput
                  * @private
                  */
-                var initStateFromService = function () {
+                const initStateFromService = function () {
                     if (service) {
                         initAttributesFromService();
 
@@ -276,9 +276,9 @@
                  * @private
                  * @param {String} serviceName - The service name to inject
                  */
-                var initService = function (serviceName) {
+                const initService = function (serviceName) {
                     if (serviceName) {
-                        var factory = $injector.get(serviceName);
+                        const factory = $injector.get(serviceName);
 
                         service = factory.create();
 
@@ -321,8 +321,8 @@
                  * @param {Object} value - The value to format
                  * @returns {String} The formatted value
                  */
-                var formatNumber = function (value) {
-                    var number = value;
+                const formatNumber = function (value) {
+                    let number = value;
 
                     if (formatter) {
                         number = formatter(value);
@@ -341,12 +341,12 @@
                  * @private
                  * @param {Object} [modelValue] - The new model value (undefined to use the ngModelCtrl.$modelValue instead)
                  */
-                var updateViewValue = function (modelValue) {
+                const updateViewValue = function (modelValue) {
                     if (modelValue === undefined) {
                         modelValue = ngModelCtrl.$modelValue;
                     }
 
-                    var viewValue = formatNumber(modelValue);
+                    const viewValue = formatNumber(modelValue);
 
                     if (viewValue !== ngModelCtrl.$viewValue) {
                         ngModelCtrl.$setViewValue(viewValue, 'change');
@@ -360,7 +360,7 @@
                 });
 
                 ngModelCtrl.$parsers.push(function parseNumber(value) {
-                    var number;
+                    let number;
 
                     if (parser) {
                         number = parser(value);
@@ -383,12 +383,12 @@
                  * @private
                  * @returns {function} The step validation function
                  */
-                var createStepValidation = function () {
+                const createStepValidation = function () {
                     if (window.Big && typeof window.Big === 'function') {
                         return function bigStepValidation(modelValue, stepValue) {
-                            var bigObj = new window.Big(modelValue);
-                            var divValue = bigObj.div(stepValue);
-                            var modValue = divValue.mod(1);
+                            const bigObj = new window.Big(modelValue);
+                            const divValue = bigObj.div(stepValue);
+                            let modValue = divValue.mod(1);
                             modValue = parseFloat(modValue);
 
                             return (modValue === 0);
@@ -399,7 +399,7 @@
                         return (((modelValue * 1000) / (stepValue * 1000) % 1) === 0);
                     };
                 };
-                var validateStep = createStepValidation();
+                const validateStep = createStepValidation();
 
                 /**
                  * Will validate the provided value is a number.
@@ -464,7 +464,7 @@
                  * @returns {Boolean} true if valid
                  */
                 ngModelCtrl.$validators.external = function (modelValue, viewValue) {
-                    var valid = true;
+                    let valid = true;
 
                     if (validation) {
                         valid = validation(modelValue, viewValue);
@@ -549,7 +549,7 @@
                 scope.$watch(function getServiceNameViaAttribute() {
                     return element.attr('service');
                 }, function onAttributeChange(value) {
-                    var updateUI = true;
+                    let updateUI = true;
 
                     if (value) {
                         initService(value);
@@ -569,7 +569,7 @@
         };
     };
 
-    var numberInputModule = window.angular.module('number-input', []);
+    const numberInputModule = window.angular.module('number-input', []);
 
     /**
      * @ngdoc directive

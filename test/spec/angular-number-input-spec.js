@@ -8,9 +8,9 @@ describe('number-input', function () {
 
     describe('validations', function () {
         it('none', inject(function ($compile, $rootScope) {
-            var scope = $rootScope.$new();
+            const scope = $rootScope.$new();
 
-            var element = angular.element('<input type="text" class="number-input" ng-model="value">');
+            let element = angular.element('<input type="text" class="number-input" ng-model="value">');
             element = $compile(element)(scope);
 
             scope.value = 10;
@@ -23,9 +23,9 @@ describe('number-input', function () {
         describe('min', function () {
             it('wrong definition', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" min="abc"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" min="abc"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10;
@@ -44,9 +44,9 @@ describe('number-input', function () {
 
             it('valid not exact', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" min="5"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" min="5"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10;
@@ -65,9 +65,9 @@ describe('number-input', function () {
 
             it('valid exact', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" min="10"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" min="10"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10;
@@ -86,9 +86,9 @@ describe('number-input', function () {
 
             it('invalid', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" min="100"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" min="100"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10;
@@ -107,9 +107,9 @@ describe('number-input', function () {
 
             it('valid from service', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" service="minValidation"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" service="minValidation"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10;
@@ -128,9 +128,9 @@ describe('number-input', function () {
 
             it('invalid from service', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" service="minValidation"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" service="minValidation"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 1;
@@ -151,9 +151,9 @@ describe('number-input', function () {
         describe('max', function () {
             it('wrong definition', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" max="abc"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" max="abc"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10;
@@ -172,9 +172,9 @@ describe('number-input', function () {
 
             it('valid not exact', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" max="5"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" max="5"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 2;
@@ -193,9 +193,9 @@ describe('number-input', function () {
 
             it('valid exact', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" max="10"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" max="10"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10;
@@ -214,9 +214,9 @@ describe('number-input', function () {
 
             it('invalid', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" max="100"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" max="100"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 1000;
@@ -235,9 +235,9 @@ describe('number-input', function () {
 
             it('valid from service', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" service="maxValidation"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" service="maxValidation"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 50;
@@ -256,9 +256,9 @@ describe('number-input', function () {
 
             it('invalid from service', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" service="maxValidation"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" service="maxValidation"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 500;
@@ -279,9 +279,9 @@ describe('number-input', function () {
         describe('step', function () {
             it('wrong definition', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" step="abc"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" step="abc"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10;
@@ -300,9 +300,9 @@ describe('number-input', function () {
 
             it('valid', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" step="0.5"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" step="0.5"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10.5;
@@ -321,9 +321,9 @@ describe('number-input', function () {
 
             it('invalid', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" step="0.5"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" step="0.5"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10.3;
@@ -342,9 +342,9 @@ describe('number-input', function () {
 
             it('valid from service', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" service="stepValidation"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" service="stepValidation"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 20;
@@ -363,9 +363,9 @@ describe('number-input', function () {
 
             it('invalid from service', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" service="stepValidation"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" service="stepValidation"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 23;
@@ -384,13 +384,13 @@ describe('number-input', function () {
 
             it('valid without big', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var big = window.Big;
+                    const big = window.Big;
                     assert.isDefined(big);
                     delete window.Big;
 
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" step="0.5"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" step="0.5"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10.5;
@@ -411,13 +411,13 @@ describe('number-input', function () {
 
             it('invalid without big', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var big = window.Big;
+                    const big = window.Big;
                     assert.isDefined(big);
                     delete window.Big;
 
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" step="0.5"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" step="0.5"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10.3;
@@ -440,9 +440,9 @@ describe('number-input', function () {
         describe('external', function () {
             it('wrong definition', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" validation="abc"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" validation="abc"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 10;
@@ -461,9 +461,9 @@ describe('number-input', function () {
 
             it('valid', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" validation="myValidator"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" validation="myValidator"></form>');
                     element = $compile(element)(scope);
 
                     scope.myValidator = function (modelValue) {
@@ -487,9 +487,9 @@ describe('number-input', function () {
 
             it('invalid', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" validation="myValidator"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" class="number-input" ng-model="value" validation="myValidator"></form>');
                     element = $compile(element)(scope);
 
                     scope.myValidator = function (modelValue) {
@@ -518,9 +518,9 @@ describe('number-input', function () {
     describe('formatter', function () {
         describe('default', function () {
             it('undefined', inject(function ($compile, $rootScope) {
-                var scope = $rootScope.$new();
+                const scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value">');
+                let element = angular.element('<input type="text" class="number-input" ng-model="value">');
                 element = $compile(element)(scope);
 
                 scope.value = undefined;
@@ -531,9 +531,9 @@ describe('number-input', function () {
             }));
 
             it('null', inject(function ($compile, $rootScope) {
-                var scope = $rootScope.$new();
+                const scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value">');
+                let element = angular.element('<input type="text" class="number-input" ng-model="value">');
                 element = $compile(element)(scope);
 
                 scope.value = null;
@@ -544,9 +544,9 @@ describe('number-input', function () {
             }));
 
             it('number', inject(function ($compile, $rootScope) {
-                var scope = $rootScope.$new();
+                const scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value">');
+                let element = angular.element('<input type="text" class="number-input" ng-model="value">');
                 element = $compile(element)(scope);
 
                 scope.value = 5.5;
@@ -557,9 +557,9 @@ describe('number-input', function () {
             }));
 
             it('invalid number', inject(function ($compile, $rootScope) {
-                var scope = $rootScope.$new();
+                const scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value" max="100">');
+                let element = angular.element('<input type="text" class="number-input" ng-model="value" max="100">');
                 element = $compile(element)(scope);
 
                 scope.value = 105.5;
@@ -570,9 +570,9 @@ describe('number-input', function () {
             }));
 
             it('not a number', inject(function ($compile, $rootScope) {
-                var scope = $rootScope.$new();
+                const scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value" max="100">');
+                let element = angular.element('<input type="text" class="number-input" ng-model="value" max="100">');
                 element = $compile(element)(scope);
 
                 scope.value = 'abc';
@@ -584,9 +584,9 @@ describe('number-input', function () {
 
             it('custom', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<input type="text" class="number-input" ng-model="value" formatter="testFormatter">');
+                    let element = angular.element('<input type="text" class="number-input" ng-model="value" formatter="testFormatter">');
                     element = $compile(element)(scope);
 
                     scope.testFormatter = function () {
@@ -606,9 +606,9 @@ describe('number-input', function () {
 
             it('custom override service', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<input type="text" class="number-input" ng-model="value" formatter="testFormatter" service="allAttributes">');
+                    let element = angular.element('<input type="text" class="number-input" ng-model="value" formatter="testFormatter" service="allAttributes">');
                     element = $compile(element)(scope);
 
                     scope.testFormatter = function () {
@@ -639,9 +639,9 @@ describe('number-input', function () {
     describe('parser', function () {
         describe('default', function () {
             it('undefined', inject(function ($compile, $rootScope) {
-                var scope = $rootScope.$new();
+                const scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value">');
+                let element = angular.element('<input type="text" class="number-input" ng-model="value">');
                 element = $compile(element)(scope);
 
                 scope.value = undefined;
@@ -652,9 +652,9 @@ describe('number-input', function () {
             }));
 
             it('null', inject(function ($compile, $rootScope) {
-                var scope = $rootScope.$new();
+                const scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value">');
+                let element = angular.element('<input type="text" class="number-input" ng-model="value">');
                 element = $compile(element)(scope);
 
                 scope.value = null;
@@ -665,9 +665,9 @@ describe('number-input', function () {
             }));
 
             it('number', inject(function ($compile, $rootScope) {
-                var scope = $rootScope.$new();
+                const scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value">');
+                let element = angular.element('<input type="text" class="number-input" ng-model="value">');
                 element = $compile(element)(scope);
 
                 scope.value = 5.5;
@@ -678,9 +678,9 @@ describe('number-input', function () {
             }));
 
             it('decimal', inject(function ($compile, $rootScope) {
-                var scope = $rootScope.$new();
+                const scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value">');
+                let element = angular.element('<input type="text" class="number-input" ng-model="value">');
                 element = $compile(element)(scope);
 
                 scope.value = 105.500;
@@ -692,9 +692,9 @@ describe('number-input', function () {
 
             it('k separator', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" name="testNumber" class="number-input" ng-model="value"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" name="testNumber" class="number-input" ng-model="value"></form>');
                     element = $compile(element)(scope);
 
                     scope.value = 100;
@@ -713,9 +713,9 @@ describe('number-input', function () {
 
             it('custom', function (done) {
                 inject(function ($compile, $rootScope) {
-                    var scope = $rootScope.$new();
+                    const scope = $rootScope.$new();
 
-                    var element = angular.element('<form name="testForm"><input type="text" name="testNumber" class="number-input" ng-model="value" parser="testParser"></form>');
+                    let element = angular.element('<form name="testForm"><input type="text" name="testNumber" class="number-input" ng-model="value" parser="testParser"></form>');
                     element = $compile(element)(scope);
 
                     scope.testParser = function () {
@@ -740,9 +740,9 @@ describe('number-input', function () {
     describe('service', function () {
         describe('replace', function () {
             it('replace', inject(function ($compile, $rootScope) {
-                var scope = $rootScope.$new();
+                const scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="noAttributes">');
+                let element = angular.element('<input type="text" class="number-input" ng-model="value" service="noAttributes">');
                 element = $compile(element)(scope);
 
                 scope.value = 500;
@@ -758,9 +758,9 @@ describe('number-input', function () {
             }));
 
             it('remove', inject(function ($compile, $rootScope) {
-                var scope = $rootScope.$new();
+                const scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="allAttributes">');
+                let element = angular.element('<input type="text" class="number-input" ng-model="value" service="allAttributes">');
                 element = $compile(element)(scope);
 
                 scope.value = 500;
@@ -776,9 +776,9 @@ describe('number-input', function () {
             }));
 
             it('custom overrides service', inject(function ($compile, $rootScope) {
-                var scope = $rootScope.$new();
+                const scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value" validation="myValidator" formatter="testFormatter" parser="testParser" service="allAttributes">');
+                let element = angular.element('<input type="text" class="number-input" ng-model="value" validation="myValidator" formatter="testFormatter" parser="testParser" service="allAttributes">');
                 element = $compile(element)(scope);
 
                 scope.value = 500;
@@ -805,9 +805,9 @@ describe('number-input', function () {
             }));
 
             it('service unable to override custom', inject(function ($compile, $rootScope) {
-                var scope = $rootScope.$new();
+                const scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value" min="0" max="5000" step="1" validation="myValidator" formatter="testFormatter" parser="testParser">');
+                let element = angular.element('<input type="text" class="number-input" ng-model="value" min="0" max="5000" step="1" validation="myValidator" formatter="testFormatter" parser="testParser">');
                 element = $compile(element)(scope);
 
                 scope.myValidator = function () {
@@ -835,9 +835,9 @@ describe('number-input', function () {
         });
 
         it('bind with name, no scope', inject(function ($compile, $rootScope) {
-            var scope = $rootScope.$new();
+            const scope = $rootScope.$new();
 
-            var element = angular.element('<input type="text" class="number-input" ng-model="value" service="allAttributes">');
+            let element = angular.element('<input type="text" class="number-input" ng-model="value" service="allAttributes">');
             element = $compile(element)(scope);
 
             scope.value = undefined;
@@ -851,9 +851,9 @@ describe('number-input', function () {
 
         describe('no capabilities', function () {
             it('no state', inject(function ($compile, $rootScope) {
-                var scope = $rootScope.$new();
+                const scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="noAttributes">');
+                let element = angular.element('<input type="text" class="number-input" ng-model="value" service="noAttributes">');
                 element = $compile(element)(scope);
 
                 scope.value = undefined;
@@ -864,9 +864,9 @@ describe('number-input', function () {
             }));
 
             it('clear old state from service and scope', inject(function ($compile, $rootScope) {
-                var scope = $rootScope.$new();
+                const scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value" validation="myValidator" formatter="testFormatter" parser="testParser">');
+                let element = angular.element('<input type="text" class="number-input" ng-model="value" validation="myValidator" formatter="testFormatter" parser="testParser">');
                 element = $compile(element)(scope);
 
                 scope.value = undefined;
@@ -912,9 +912,9 @@ describe('number-input', function () {
             }));
 
             it('clear old state from service with all attributes', inject(function ($compile, $rootScope) {
-                var scope = $rootScope.$new();
+                const scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="allAttributes">');
+                let element = angular.element('<input type="text" class="number-input" ng-model="value" service="allAttributes">');
                 element = $compile(element)(scope);
 
                 scope.value = 500;
@@ -931,9 +931,9 @@ describe('number-input', function () {
             }));
 
             it('clear old state from service with no attributes', inject(function ($compile, $rootScope) {
-                var scope = $rootScope.$new();
+                const scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="noAttributes">');
+                let element = angular.element('<input type="text" class="number-input" ng-model="value" service="noAttributes">');
                 element = $compile(element)(scope);
 
                 scope.value = 500;
@@ -952,9 +952,9 @@ describe('number-input', function () {
 
         describe('all capabilities', function () {
             it('no state', inject(function ($compile, $rootScope) {
-                var scope = $rootScope.$new();
+                const scope = $rootScope.$new();
 
-                var element = angular.element('<input type="text" class="number-input" ng-model="value" service="allAttributes">');
+                let element = angular.element('<input type="text" class="number-input" ng-model="value" service="allAttributes">');
                 element = $compile(element)(scope);
 
                 scope.value = undefined;
@@ -969,9 +969,9 @@ describe('number-input', function () {
         });
 
         it('ignore service functions', inject(function ($compile, $rootScope) {
-            var scope = $rootScope.$new();
+            const scope = $rootScope.$new();
 
-            var element = angular.element('<input type="text" class="number-input" ng-model="value" validation="myValidator" formatter="testFormatter" parser="testParser" service="allAttributes">');
+            let element = angular.element('<input type="text" class="number-input" ng-model="value" validation="myValidator" formatter="testFormatter" parser="testParser" service="allAttributes">');
             element = $compile(element)(scope);
 
             scope.value = undefined;
@@ -995,9 +995,9 @@ describe('number-input', function () {
 
     describe('events', function () {
         it('number-input$update-model', inject(function ($compile, $rootScope) {
-            var scope = $rootScope.$new();
+            const scope = $rootScope.$new();
 
-            var element = angular.element('<input type="text" class="number-input" ng-model="value">');
+            let element = angular.element('<input type="text" class="number-input" ng-model="value">');
             element = $compile(element)(scope);
 
             scope.value = 10;

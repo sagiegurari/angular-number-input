@@ -2,7 +2,7 @@ window.angular.module('testServices', []).service('noAttributes', function defin
     'use strict';
 
     return {
-        create: function () {
+        create() {
             return {};
         }
     };
@@ -10,7 +10,7 @@ window.angular.module('testServices', []).service('noAttributes', function defin
     'use strict';
 
     return {
-        create: function () {
+        create() {
             var service = {};
 
             service.min = 10;
@@ -57,7 +57,7 @@ window.angular.module('testServices', []).service('noAttributes', function defin
     'use strict';
 
     return {
-        create: function () {
+        create() {
             var service = {};
 
             service.min = 10;
@@ -75,7 +75,7 @@ window.angular.module('testServices', []).service('noAttributes', function defin
     'use strict';
 
     return {
-        create: function () {
+        create() {
             var service = {};
 
             service.max = 100;
@@ -93,7 +93,7 @@ window.angular.module('testServices', []).service('noAttributes', function defin
     'use strict';
 
     return {
-        create: function () {
+        create() {
             var service = {};
 
             service.step = 5;

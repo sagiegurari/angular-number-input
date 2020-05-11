@@ -3,8 +3,8 @@
 module.exports = function (config) {
     'use strict';
 
-    var mainJSFile = require('../../bower.json').main;
-    var commons = require('js-project-commons');
+    const mainJSFile = require('../../bower.json').main;
+    const commons = require('js-project-commons');
 
     commons.tools.karma(config, {
         files: [
