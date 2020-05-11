@@ -54,7 +54,7 @@
     "grunt-karma": "latest",
     "husky": "latest",
     "jquery": "latest",
-    "js-project-commons": "latest",
+    "js-project-commons": "^1.3.1",
     "karma": "latest",
     "karma-chrome-launcher": "latest",
     "karma-cli": "latest",

@@ -135,6 +135,7 @@ See [contributing guide](.github/CONTRIBUTING.md)
 
 | Date        | Version | Description |
 | ----------- | ------- | ----------- |
+| 2020-05-11  | v2.0.0  | Migrate to github actions, upgrade minimal node version and remove bower |
 | 2019-02-08  | v1.1.7  | Maintenance |
 | 2018-02-12  | v1.1.2  | Add support for step validations using big.js for more accurate calculations |
 | 2018-02-01  | v1.0.38 | Link function of the provided service will only be called once to prevent memory leaks |
