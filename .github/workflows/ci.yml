@@ -12,19 +12,19 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Install
-      uses: ianwalter/puppeteer@v3.0.0
+      uses: ianwalter/puppeteer@v2.0.0
       with:
         args: npm install
     - name: Install Globals
-      uses: ianwalter/puppeteer@v3.0.0
+      uses: ianwalter/puppeteer@v2.0.0
       with:
         args: npm install -g bower
     - name: Install Web
-      uses: ianwalter/puppeteer@v3.0.0
+      uses: ianwalter/puppeteer@v2.0.0
       with:
         args: bower install
     - name: Run CI
-      uses: ianwalter/puppeteer@v3.0.0
+      uses: ianwalter/puppeteer@v2.0.0
       with:
         args: npm test
     - name: Coveralls
