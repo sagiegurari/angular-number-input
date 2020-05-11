@@ -42,12 +42,18 @@
       "pre-push": "npm run build"
     }
   },
+  "dependencies": {
+    "angular": "^1"
+  },
   "devDependencies": {
+    "angular-mocks": "^1",
+    "big.js": "latest",
     "chai": "latest",
     "grunt": "latest",
     "grunt-cli": "latest",
     "grunt-karma": "latest",
     "husky": "latest",
+    "jquery": "latest",
     "js-project-commons": "latest",
     "karma": "latest",
     "karma-chrome-launcher": "latest",

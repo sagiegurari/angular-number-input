@@ -11,7 +11,7 @@ window.angular.module('testServices', []).service('noAttributes', function defin
 
     return {
         create() {
-            var service = {};
+            const service = {};
 
             service.min = 10;
             service.max = 10000;
@@ -58,7 +58,7 @@ window.angular.module('testServices', []).service('noAttributes', function defin
 
     return {
         create() {
-            var service = {};
+            const service = {};
 
             service.min = 10;
 
@@ -76,7 +76,7 @@ window.angular.module('testServices', []).service('noAttributes', function defin
 
     return {
         create() {
-            var service = {};
+            const service = {};
 
             service.max = 100;
 
@@ -94,7 +94,7 @@ window.angular.module('testServices', []).service('noAttributes', function defin
 
     return {
         create() {
-            var service = {};
+            const service = {};
 
             service.step = 5;
 
