@@ -118,10 +118,4 @@ Run npm install in your project as follows:
 npm install --save {"gitdown": "gitinfo", "name": "name"}
 ```
 
-Or if you are using bower, you can install it as follows:
-
-```sh
-bower install {"gitdown": "gitinfo", "name": "name"} --save
-```
-
 {"gitdown": "include", "file": "./README-footer-template.md"}

@@ -118,12 +118,6 @@ Run npm install in your project as follows:
 npm install --save angular-number-input
 ```
 
-Or if you are using bower, you can install it as follows:
-
-```sh
-bower install angular-number-input --save
-```
-
 ## API Documentation
 See full docs at: [API Docs](docs/api.md)
 
