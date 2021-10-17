@@ -45,7 +45,6 @@
     "big.js": "^6",
     "chai": "^4",
     "eslint": "^8",
-    "gitdown": "^3",
     "jquery": "^3",
     "js-beautify": "^1",
     "jsdoc-to-markdown": "^7",
