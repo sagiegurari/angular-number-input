@@ -12,11 +12,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Install
-      uses: ianwalter/puppeteer@v2.0.0
+      uses: browser-actions/setup-chrome@latest
       with:
         args: npm install
     - name: Run CI
-      uses: ianwalter/puppeteer@v2.0.0
+      uses: browser-actions/setup-chrome@latest
       with:
         args: npm test
     - name: Coveralls
