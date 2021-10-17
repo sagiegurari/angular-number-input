@@ -11,10 +11,11 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+    - name: Install Chrome
+      uses: browser-actions/setup-chrome@latest
     - name: Install Dependencies
       run: npm install
     - name: Run CI
-      uses: browser-actions/setup-chrome@latest
       run: npm test
     - name: Coveralls
       uses: coverallsapp/github-action@master
