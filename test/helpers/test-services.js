@@ -1,3 +1,5 @@
+/*global assert: false */
+
 window.angular.module('testServices', []).service('noAttributes', function define() {
     'use strict';
 
