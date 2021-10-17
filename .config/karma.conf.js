@@ -22,7 +22,11 @@ module.exports = function (config) {
             'progress',
             'coverage'
         ],
-        preprocessors: {},
+        preprocessors: {
+            [mainJSFile]: [
+                'coverage'
+            ]
+        },
         coverageReporter: {
             dir: 'coverage',
             reporters: [
